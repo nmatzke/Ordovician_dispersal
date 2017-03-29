@@ -1,0 +1,39 @@
+#NEXUS
+[R-package APE, Sun Sep  4 00:58:26 2016]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 13;
+	TAXLABELS
+		B_tenuirugosus
+		B_beckeri
+		B_kimmswickensis
+		B_bellevillensis
+		B_porrectus
+		B_holei
+		B_graffhami
+		B_milleri
+		B_billingsi
+		B_solangeae
+		B_moundensis
+		B_lenzi
+		S_linnarssoni
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	B_tenuirugosus,
+		2	B_beckeri,
+		3	B_kimmswickensis,
+		4	B_bellevillensis,
+		5	B_porrectus,
+		6	B_holei,
+		7	B_graffhami,
+		8	B_milleri,
+		9	B_billingsi,
+		10	B_solangeae,
+		11	B_moundensis,
+		12	B_lenzi,
+		13	S_linnarssoni
+	;
+	TREE * UNTITLED = [&R] (((((((((1:0.6926594973,2:7.507073879):1.985111594,3:0.3782329857):1.190352133,((4:0.5504343137,5:0.5218728408):0.7071482912,6:1.020063162):0.4898659494):1.483986193,(7:0.7069022506,8:2.245244443):0.9245722741):0.6222434044,9:2.93776571):0.3862381727,10:1.623030633):0.6769869924,11:0.9398292787):0.5400093198,12:2.388283141):1.403709007,13:10.93321015):0;
+END;

@@ -1,0 +1,39 @@
+#NEXUS
+[R-package APE, Sun Sep  4 18:05:59 2016]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 13;
+	TAXLABELS
+		P_subcircularis
+		P_proavitus
+		P_occidentalis
+		P_belilamellosus
+		P_subquadratus
+		P_anticostiensis
+		P_carltona
+		P_bellistriatus
+		P_idahoensis
+		P_cutterensis
+		D_sweeneyi
+		D_meedsi_arctica
+		D_venusta
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	P_subcircularis,
+		2	P_proavitus,
+		3	P_occidentalis,
+		4	P_belilamellosus,
+		5	P_subquadratus,
+		6	P_anticostiensis,
+		7	P_carltona,
+		8	P_bellistriatus,
+		9	P_idahoensis,
+		10	P_cutterensis,
+		11	D_sweeneyi,
+		12	D_meedsi_arctica,
+		13	D_venusta
+	;
+	TREE * UNTITLED = [&R] (((((1:0.3493622746,2:0.5524113309):0.8841541875,(3:0.5901996344,4:0.5524729341):0.9910148829):2.355315376,(((5:-0.8086522222,6:2.482100487):0.8046712633,7:-0.0505577568):1.098535934,8:1.406316294):2.44905818):0.5626621358,(9:0.6839255691,10:0.8300014734):3.502601177):7.035386443,((11:0.1735491455,12:1.206244081):0.4605491804,13:1.332634648):0.6832630886):0;
+END;

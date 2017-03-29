@@ -1,0 +1,17 @@
+16	7	(A C O R S U W)
+E_mucronata	0000001
+E_magna	0000001
+E_vaurealensis	0000100
+E_minerva	0000001
+E_glabra	0000100
+E_johnsonella	0000001
+E_recedens	0000010
+E_aspera	0000010
+E_maearum	0001000
+E_advena	0010000
+E_clarksvillensis	0100000
+E_celticus	0010000
+E_voldemortus	0001000
+E_dignata	0000010
+S_rugosa	1000000
+S_socialis	1000000

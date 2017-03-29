@@ -1,0 +1,12 @@
+OTU	nPar	nQ	nQ_woInvar	numchars	completePercent	numchars2	completePercent2
+1	D_tennesseensis	2	0	0	16	88.89	16	88.89
+2	H_alveata	5	0	0	13	72.22	13	72.22
+3	H_bursa	1	1	1	16	88.89	16	88.89
+4	H_frankfortensis	2	0	0	16	88.89	16	88.89
+5	H_maria	3	0	0	15	83.33	15	83.33
+6	H_montoyensis	2	5	5	11	61.11	11	61.11
+7	H_occidentalis	13	0	0	5	27.78	5	27.78
+8	H_parksensis	4	0	0	14	77.78	14	77.78
+9	H_prestonensis	1	0	0	17	94.44	17	94.44
+10	H_richmondensis	1	0	0	17	94.44	17	94.44
+11	H_subjugata	0	1	1	17	94.44	17	94.44

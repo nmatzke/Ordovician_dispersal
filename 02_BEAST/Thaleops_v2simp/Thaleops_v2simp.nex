@@ -1,0 +1,30 @@
+#NEXUS
+
+BEGIN DATA;
+	DIMENSIONS  NTAX=20 NCHAR=20;
+	FORMAT DATATYPE = STANDARD GAP = - MISSING = ? SYMBOLS = "  0 1 2 3 4";
+	MATRIX
+	Raymondapsis         00000000000000000000
+	T_lacertus         20112?21211021?2030?
+	T_viator           20112021211021?20302
+	T_utahensis        2012211111202102030?
+	T_marginalis       20112111111011220203
+	T_conradi          20111012212021122312
+	T_angusticollis    201?0012202020312412
+	T_depressicapitatus	2011101??1?021221312
+	T_latiaxiatus      201?1121?1?021221312
+	T_fieldi           201??01??1?021221302
+	T_conifrons        2011??1??0?120300412
+	T_raymondi         2011001121?120211310
+	T_mackenziensis    2011101??131211204?2
+	T_aduncus          2011101??13021020412
+	T_ovata            20110011203120112311
+	T_longispina       2011?011203120301412
+	T_anusacerbissima  2011101??13121120402
+	T_laurentiana      20111011212021120302
+	T_jaanussoni       20110011213021021312
+	T_mobydicki        20111011211021220302
+
+;
+END;
+

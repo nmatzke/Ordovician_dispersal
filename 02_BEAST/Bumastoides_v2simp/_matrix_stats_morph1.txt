@@ -1,0 +1,11 @@
+matrix_stats
+numtaxa	13
+numchars	20
+ttl_nchar	260
+ttl_nPar	0
+ttl_nQ	28
+ttl_nQ_woInvar	28
+complete_chars	232
+complete_percent	89.23
+complete_chars2	232
+complete_percent2	89.23

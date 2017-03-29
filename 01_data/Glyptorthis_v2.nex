@@ -1,0 +1,185 @@
+#NEXUS
+[written Sat Sep 03 22:06:36 AEST 2016 by Mesquite  version 3.04 (build 725) at nicotra-lab-pc4.anu.edu.au/150.203.51.179]
+
+BEGIN TAXA;
+	TITLE Taxa;
+	DIMENSIONS NTAX=25;
+	TAXLABELS
+		'H_australis' 'H_biconvexa' 'G_alta' 'G_assimilis' 'G_bellarugosa' 'G_bellatula' 'G_concinnula' 'G_costellata' 'G_crenulata' 'G_daytonensis' 'G_equiconvexa' 'G_fausta' 'G_glaseri' 'G_glypta' 'G_insculpta' 'G_irregularis' 'G_maquoketensis' 'G_multicostellata' 'G_obesa' 'G_pulchra' 'G_senecta' 'G_subcircularis' 'G_sulcata' 'G_uncinata' 'G_uniformis' 
+	;
+
+END;
+
+
+BEGIN CHARACTERS;
+	TITLE  Character_Matrix;
+	DIMENSIONS  NCHAR=34;
+	FORMAT DATATYPE = STANDARD GAP = - MISSING = ? SYMBOLS = "  0 1 2";
+	CHARSTATELABELS 
+		1 char1, 2 char2, 3 char3, 4 char4, 5 char5, 6 char6, 7 char7, 8 char8, 9 char9, 10 char10, 11 char11, 12 char12, 13 char13, 14 char14, 15 char15, 16 char16, 17 char17, 18 char18, 19 char19, 20 char20, 21 char21, 22 char22, 23 char23, 24 char24, 25 char25, 26 char26, 27 char27, 28 char28, 29 char29, 30 char30, 31 char31, 32 char32, 33 char33, 34 char34 ; 
+	MATRIX
+	'H_australis'      00(0 1)00000000000000(0 1)000000000000000(0 1)
+	'H_biconvexa'      1100110000000000?21101000000000000
+	'G_alta'           0111101(0 1)1110?010?2010101???0100010
+	'G_assimilis'      01111(0 1)1111111010000001(0 1)1000101000(0 1)
+	'G_bellarugosa'    0011100111101(0 1)101(1 2)0(0 1)01(0 1)00(0 1)(0 1)011111(0 1)
+	'G_bellatula'      011??00(0 1)02100001111001011011111011
+	'G_concinnula'     211110001220?????001001?1??1011001
+	'G_costellata'     00101011021001000011(0 1)(0 1)110000000000
+	'G_crenulata'      0(0 1)0001010121111011111111000101(0 1)10(0 1)
+	'G_daytonensis'    1(0 1)100101010000?1121111010??0001101
+	'G_equiconvexa'    01(0 1)10(0 1)1102000101000001111110000111
+	'G_fausta'         1(0 1)00(0 1)(0 1)010101000110111001111?????01
+	'G_glaseri'        11111(0 1)01021011?11?000??1011000111?
+	'G_glypta'         2011010002(1 2)00001?11111011110100101
+	'G_insculpta'      10(0 1)001(0 1)10(1 2)(0 1)111001(0 1)000(0 1)00(0 1)(0 1)(0 1)0101111
+	'G_irregularis'    001??10(0 1)11(1 2)01111020100100100000100
+	'G_maquoketensis'  11(0 1)0100102011111000010001110101010
+	'G_multicostellata'011??11(0 1)1221111(0 1)1111110010001100?1
+	'G_obesa'          0?1??0001220100102000001011010?0??
+	'G_pulchra'        (0 1)0000(0 1)0111(0 1)111110110011101110110(0 1)1
+	'G_senecta'        (0 1)11??(0 1)1112210000?(1 2)00001(0 1)(0 1)(0 1)(0 1)0011110
+	'G_subcircularis'  11(0 1)10(0 1)101(1 2)(0 1)111001000(0 1)1101001001011
+	'G_sulcata'        (0 2)1010(0 1)10022??????2000(0 1)1????1110(0 1)1(0 1)
+	'G_uncinata'       20(0 1)0110(0 1)02200001?100000?001000(0 1)1(0 1)1
+	'G_uniformis'      0(0 1)(0 1)(0 1)(0 1)(0 1)(0 1)1(0 1)2(0 1)111(0 1)000(0 1)0(0 1)1(0 1)0100111(0 1)1(0 1)0
+
+;
+
+END;
+BEGIN ASSUMPTIONS;
+	TYPESET * UNTITLED   =  unord:  1 -  34;
+
+END;
+
+BEGIN MESQUITECHARMODELS;
+	ProbModelSet * UNTITLED   =  'Mk1 (est.)':  1 -  34;
+END;
+
+Begin MESQUITE;
+		MESQUITESCRIPTVERSION 2;
+		TITLE AUTO;
+		tell ProjectCoordinator;
+		timeSaved 1472904396789;
+		getEmployee #mesquite.minimal.ManageTaxa.ManageTaxa;
+		tell It;
+			setID 0 9113693136599890488;
+		endTell;
+		getEmployee #mesquite.charMatrices.ManageCharacters.ManageCharacters;
+		tell It;
+			setID 0 7085153711245977832;
+			mqVersion 304;
+			checksumv 0 3 144307635 null  getNumChars 34 numChars 34 getNumTaxa 25 numTaxa 25   short true   bits 7   states 7   sumSquaresStatesOnly 3030.0 sumSquares 3030.0 longCompressibleToShort false usingShortMatrix true   NumFiles 1 NumMatrices 1;
+			mqVersion;
+		endTell;
+		getWindow;
+		tell It;
+			suppress;
+			setResourcesState true false 100;
+			setPopoutState 300;
+			setExplanationSize 0;
+			setAnnotationSize 0;
+			setFontIncAnnot 0;
+			setFontIncExp 0;
+			setSize 1302 612;
+			setLocation 8 23;
+			setFont SanSerif;
+			setFontSize 10;
+			getToolPalette;
+			tell It;
+			endTell;
+			setActive;
+			desuppress;
+		endTell;
+		getEmployee  #mesquite.charMatrices.BasicDataWindowCoord.BasicDataWindowCoord;
+		tell It;
+			showDataWindow #7085153711245977832 #mesquite.charMatrices.BasicDataWindowMaker.BasicDataWindowMaker;
+			tell It;
+				getWindow;
+				tell It;
+					setExplanationSize 30;
+					setAnnotationSize 20;
+					setFontIncAnnot 0;
+					setFontIncExp 0;
+					setSize 0 -72;
+					setLocation 8 23;
+					setFont SanSerif;
+					setFontSize 10;
+					getToolPalette;
+					tell It;
+					endTell;
+					setTool mesquite.charMatrices.BasicDataWindowMaker.BasicDataWindow.arrow;
+					colorCells  #mesquite.charMatrices.NoColor.NoColor;
+					colorRowNames  #mesquite.charMatrices.TaxonGroupColor.TaxonGroupColor;
+					colorColumnNames  #mesquite.charMatrices.CharGroupColor.CharGroupColor;
+					colorText  #mesquite.charMatrices.NoColor.NoColor;
+					setBackground White;
+					toggleShowNames on;
+					toggleShowTaxonNames on;
+					toggleTight off;
+					toggleThinRows off;
+					toggleShowChanges on;
+					toggleSeparateLines off;
+					toggleShowStates on;
+					toggleAutoWCharNames on;
+					toggleAutoTaxonNames off;
+					toggleShowDefaultCharNames off;
+					toggleConstrainCW on;
+					toggleBirdsEye off;
+					toggleShowPaleGrid off;
+					toggleShowPaleCellColors off;
+					toggleShowPaleExcluded off;
+					togglePaleInapplicable on;
+					toggleShowBoldCellText off;
+					toggleAllowAutosize on;
+					toggleColorsPanel off;
+					toggleDiagonal on;
+					setDiagonalHeight 80;
+					toggleLinkedScrolling on;
+					toggleScrollLinkedTables off;
+				endTell;
+				getWindow;
+				tell It;
+					forceAutosize;
+				endTell;
+				hideWindow;
+				getEmployee #mesquite.charMatrices.ColorByState.ColorByState;
+				tell It;
+					setStateLimit 9;
+					toggleUniformMaximum on;
+				endTell;
+				getEmployee #mesquite.charMatrices.ColorCells.ColorCells;
+				tell It;
+					setColor Red;
+					removeColor off;
+				endTell;
+				getEmployee #mesquite.categ.StateNamesStrip.StateNamesStrip;
+				tell It;
+					showStrip off;
+				endTell;
+				getEmployee #mesquite.charMatrices.AnnotPanel.AnnotPanel;
+				tell It;
+					togglePanel off;
+				endTell;
+				getEmployee #mesquite.charMatrices.CharReferenceStrip.CharReferenceStrip;
+				tell It;
+					showStrip off;
+				endTell;
+				getEmployee #mesquite.charMatrices.QuickKeySelector.QuickKeySelector;
+				tell It;
+					autotabOff;
+				endTell;
+				getEmployee #mesquite.charMatrices.SelSummaryStrip.SelSummaryStrip;
+				tell It;
+					showStrip off;
+				endTell;
+				getEmployee #mesquite.categ.SmallStateNamesEditor.SmallStateNamesEditor;
+				tell It;
+					panelOpen true;
+				endTell;
+			endTell;
+		endTell;
+		endTell;
+end;
+
+

@@ -1,0 +1,24 @@
+#NEXUS
+
+BEGIN DATA;
+	DIMENSIONS  NTAX=14 NCHAR=28;
+	FORMAT DATATYPE = STANDARD GAP = - MISSING = ? SYMBOLS = "  0 1 2 3 4";
+	MATRIX
+	Lichas_laciniatus	000???0000000000000000000000
+	P_kristiae       112222211111?111112100021031
+	P_pandus         112111211110????????????????
+	P_robbinsi       112111211100????????????????
+	A_lineatus       210???2111011111211??00?0??0
+	A_subpunctatus   110???2111010111211100010120
+	A_aspratilis     110???2111000111211100010120
+	A_conradi        010???2111000111211100000120
+	A_cucullus       111???1111000111211100010120
+	A_jukesi         110???1111111111221111200?10
+	L_bronnikovi     010???2?11000000232000000120
+	P_ornatus        100???2010100000000102110042
+	A_encyrtos       110???211100??11221101201120
+	A_effnensis      110???2111011????21110?10?20
+
+;
+END;
+

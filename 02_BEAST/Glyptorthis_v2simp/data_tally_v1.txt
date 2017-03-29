@@ -1,0 +1,26 @@
+OTUs	use	clade_constr	file1	any_data
+1	H_australis	yes	1	1	1
+2	H_biconvexa	yes	1	1	1
+3	G_alta	yes	0	1	1
+4	G_assimilis	yes	0	1	1
+5	G_bellarugosa	yes	0	1	1
+6	G_bellatula	yes	0	1	1
+7	G_concinnula	yes	0	1	1
+8	G_costellata	yes	0	1	1
+9	G_crenulata	yes	0	1	1
+10	G_daytonensis	yes	0	1	1
+11	G_equiconvexa	yes	0	1	1
+12	G_fausta	yes	0	1	1
+13	G_glaseri	yes	0	1	1
+14	G_glypta	yes	0	1	1
+15	G_insculpta	yes	0	1	1
+16	G_irregularis	yes	0	1	1
+17	G_maquoketensis	yes	0	1	1
+18	G_multicostellata	yes	0	1	1
+19	G_obesa	yes	0	1	1
+20	G_pulchra	yes	0	1	1
+21	G_senecta	yes	0	1	1
+22	G_subcircularis	yes	0	1	1
+23	G_sulcata	yes	0	1	1
+24	G_uncinata	yes	0	1	1
+25	G_uniformis	yes	0	1	1

@@ -1,0 +1,17 @@
+OTUs	use	clade_constr	file1	any_data
+1	Gravicalymene_sp	yes	1	1	1
+2	Gravicalymene_truncatus	yes	1	1	1
+3	F_verecunda	yes	0	1	1
+4	F_onniensis	yes	0	1	1
+5	F_scabustula	yes	0	1	1
+6	F_jemtlandica	yes	0	1	1
+7	F_cavei	yes	0	1	1
+8	F_planimarginata	yes	0	1	1
+9	F_caractaci	yes	0	1	1
+10	F_senaria	yes	0	1	1
+11	F_praelongicephala	yes	0	1	1
+12	F_quadricapita	yes	0	1	1
+13	F_granulosa	yes	0	1	1
+14	F_meeki	yes	0	1	1
+15	F_retrorsa_retrorsa	yes	0	1	1
+16	F_retrorsa_minuens	yes	0	1	1

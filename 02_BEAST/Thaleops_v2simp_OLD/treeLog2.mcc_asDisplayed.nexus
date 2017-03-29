@@ -1,0 +1,53 @@
+#NEXUS
+[R-package APE, Sun Sep  4 02:10:34 2016]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 20;
+	TAXLABELS
+		Raymondapsis
+		T_utahensis
+		T_marginalis
+		T_jaanussoni
+		T_raymondi
+		T_longispina
+		T_angusticollis
+		T_conifrons
+		T_fieldi
+		T_mobydicki
+		T_lacertus
+		T_viator
+		T_conradi
+		T_ovata
+		T_depressicapitatus
+		T_latiaxiatus
+		T_laurentiana
+		T_aduncus
+		T_mackenziensis
+		T_anusacermissima
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Raymondapsis,
+		2	T_utahensis,
+		3	T_marginalis,
+		4	T_jaanussoni,
+		5	T_raymondi,
+		6	T_longispina,
+		7	T_angusticollis,
+		8	T_conifrons,
+		9	T_fieldi,
+		10	T_mobydicki,
+		11	T_lacertus,
+		12	T_viator,
+		13	T_conradi,
+		14	T_ovata,
+		15	T_depressicapitatus,
+		16	T_latiaxiatus,
+		17	T_laurentiana,
+		18	T_aduncus,
+		19	T_mackenziensis,
+		20	T_anusacermissima
+	;
+	TREE * UNTITLED = [&R] (1:6.8505328,(2:1.477147713,(3:1.184826434,((4:1.163981788,(5:1.294976852,(6:0.5439897696,(7:1.971152809,8:0.1894774884):0.8872424881):1.242284663):0.360768415):1.310042135,(9:0.4607552029,((10:0.3847650215,(11:0.3947367985,12:0.3648744486):1.148168769):0.3671181798,((13:0.3566011041,(14:6.807518482,(15:0.8549068421,16:-0.8237752533):0.174683705):1.334412292):2.295631014,(17:1.280037925,(18:0.7153504314,(19:0.2427355796,20:0.3620806523):0.589722597):0.2140372461):0.3769783303):0.6055682525):0.7361573912):1.298684772):2.181563169):1.547369227):2.697966859):0;
+END;

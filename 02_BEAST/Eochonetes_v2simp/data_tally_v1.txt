@@ -1,0 +1,17 @@
+OTUs	use	clade_constr	file1	any_data
+1	S_socialis	yes	1	1	1
+2	S_rugosa	yes	1	1	1
+3	E_advena	yes	0	1	1
+4	E_aspera	yes	0	1	1
+5	E_maearum	yes	0	1	1
+6	E_celticus	yes	0	1	1
+7	E_clarksvillensis	yes	0	1	1
+8	E_minerva	yes	0	1	1
+9	E_dignata	yes	0	1	1
+10	E_johnsonella	yes	0	1	1
+11	E_magna	yes	0	1	1
+12	E_mucronata	yes	0	1	1
+13	E_recedens	yes	0	1	1
+14	E_voldemortus	yes	0	1	1
+15	E_vaurealensis	yes	0	1	1
+16	E_glabra	yes	0	1	1

@@ -1,0 +1,10 @@
+Notes on fossils in phylogenetic biogeography analyses:
+
+As our phylogenies are not ultrametric (they are tip-dated), it is worth commenting briefly on the use of fossils in probabilistic biogeography. BioGeoBEARS is programmed to use the input branchlengths appropriately in likelihood calculations, whether or not the tree is ultrametric, and whether or not the analysis is time-stratified. (In BioGeoBEARS, fossil side-branches are treated like any other branches, but extremely short branches, with lengths less than 0.000001, are used to represent assumed or inferred direct ancestor fossils; cladogenesis processes will not be used for these nodes on the tree, as they do not represent cladogenesis events.) 
+
+The program Lagrange (either the Python or C++ version) issues a warning if non-ultrametric trees are used. The C++ version assumes that the user means to use an ultrametric tree, and so automatically extends the tip branch lengths so that all tips have the same height (first noticed by Reddy & Condamine, 2016). This is useful behavior if, for instance, tiny errors in branchlengths have produced a tree that is slightly non-ultrametric (as are sometimes output by various dating programs). However, it is pathological behavior if the user meant for the tip branches to have different heights, as will occur with a tree including fossils. Experiments performed with Python Lagrange (data not shown) indicate that it does not exhibit the same problem, producing identical likelihoods and parameter inferences to BioGeoBEARS-DEC on a fossil tree in a non-time-stratified analysis, and producing very similar likelihoods and parameter inferences in a time-stratified analysis. However, time-stratified Python Lagrange produces a disturbing warning (“RuntimeWarning: divide by zero encountered in log return nx.log(x)"”) if any tips occur below any of the time-bin borders. 
+
+Reference
+
+Reddy, Champak Beeravolu; Condamine, Fabien (2016). An Extended Maximum Likelihood Inference of Geographic Range Evolution by Dispersal, Local Extinction and Cladogenesis. bioArXiv. doi: https://doi.org/10.1101/038695
+

@@ -1,0 +1,24 @@
+OTUs	use	clade_constr	file1	any_data
+1	Actinopeltis_globosa	yes	1	1	1
+2	Actinopeltis_carolialexandri	yes	1	1	1
+3	D_barrandei	yes	0	1	1
+4	D_globifrons	yes	0	1	1
+5	D_ellipticum	yes	0	1	1
+6	D_bainsi	yes	0	1	1
+7	D_grovesi	yes	0	1	1
+8	D_longifrons	yes	0	1	1
+9	D_fleur	yes	0	1	1
+10	O_liversidgei	yes	0	1	1
+11	S_robustus	yes	0	1	1
+12	S_kingi	yes	0	1	1
+13	S_dentata	yes	0	1	1
+14	S_longispina	yes	0	1	1
+15	S_cranium	yes	0	1	1
+16	S_maquoketensis	yes	0	1	1
+17	S_murphyi	yes	0	1	1
+18	S_gemina	yes	0	1	1
+19	S_goodnovi	yes	0	1	1
+20	S_exserta	yes	0	1	1
+21	H_huebneri	yes	0	1	1
+22	H_pseudohemicranium	yes	0	1	1
+23	H_elliptica	yes	0	1	1

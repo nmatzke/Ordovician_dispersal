@@ -1,0 +1,24 @@
+23	9	(A B G N O P U V W)
+D_globifrons	010000000
+D_barrandei	000000010
+O_liversidgei	001000000
+D_longifrons	000000001
+D_fleur	001000000
+D_ellipticum	010000000
+D_bainsi	000100000
+D_grovesi	000100000
+S_exserta	001000000
+S_goodnovi	000001000
+S_maquoketensis	000000100
+S_robustus	000101000
+S_dentata	010000000
+S_kingi	000000010
+S_murphyi	000010000
+S_gemina	100000000
+S_longispina	100000000
+S_cranium	010000000
+H_pseudohemicranium	010000000
+H_huebneri	010000000
+H_elliptica	001000000
+Actinopeltis_carolialexandri	001000000
+Actinopeltis_globosa	001000000

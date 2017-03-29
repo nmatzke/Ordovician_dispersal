@@ -1,0 +1,2 @@
+dataset_name	name_of_userDataType	numstates	ordering	numchars	numGammaCat	clockModel_name
+1	Plaesiomys_v2simp	datatype_Plaesiomys_v2simp_morph2_unordered	2	unordered	21	4	shared_clock

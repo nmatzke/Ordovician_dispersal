@@ -1,0 +1,14 @@
+13	9	(A B G N R S U V W)
+A_cucullus	000000001
+A_aspratilis	000100000
+A_subpunctatus	000000001
+A_conradi	000101000
+A_lineatus	010000000
+A_effnensis	100000000
+A_encyrtos	001000000
+A_jukesi	000011000
+P_robbinsi	000000100
+P_pandus	100000000
+P_kristiae	000000001
+L_bronnikovi	001000000
+Lichas_laciniatus	011000010

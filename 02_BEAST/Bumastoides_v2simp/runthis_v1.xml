@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beast beautitemplate="Standard" beautistatus="" namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" version="2.0">
+ 
+ 
+ <!-- XML SECTION 1: Header and Beast2 Java class references / mappings -->
+ 
+ 
+ <!-- A list of class mappings used in this Beast2 XML -->
+ <map name="SiteModel">beast.evolution.sitemodel.SiteModel</map>
+ <map name="Beta">beast.math.distributions.Beta</map>
+ <map name="Exponential">beast.math.distributions.Exponential</map>
+ <map name="InverseGamma">beast.math.distributions.InverseGamma</map>
+ <map name="LogNormal">beast.math.distributions.LogNormalDistributionModel</map>
+ <map name="Gamma">beast.math.distributions.Gamma</map>
+ <map name="Uniform">beast.math.distributions.Uniform</map>
+ <map name="prior">beast.math.distributions.Prior</map>
+ <map name="LaplaceDistribution">beast.math.distributions.LaplaceDistribution</map>
+ <map name="OneOnX">beast.math.distributions.OneOnX</map>
+ <map name="Normal">beast.math.distributions.Normal</map>
+ 
+ 
+ <!-- This XML file was written using BEASTmasteR at 2016-09-04 00:10:10-->
+ 
+ <!-- BEASTmasteR took a lot of work.  Please cite if you use! Citation info: -->
+ <!-- Matzke, Nicholas J. (2014). "BEASTmasteR: Automated conversion of NEXUS data to BEAST2 XML format, for fossil tip-dating and other uses." Online at PhyloWiki, http://phylo.wikidot.com/beastmaster. Accessed (access date). -->
+ 
+ <!-- Information & citation on the data source(s) that went into this XML: -->
+ <!-- (it is crucial to track, and cite, your data sources!) -->
+ 
+ <!-- Dataset from Adrian Lam; BEASTmasteR by Nick Matzke -->
+ 
+ 
+ 
+ <!-- XML SECTION 2: Taxa and clade definitions (and tip-dates if desired) -->
+ <!--                (Anything you want to constrain and/or log)           -->
+ 
+ <!-- A taxonset named list_of_OTUs. Can be used for clade constraints and/or logging. -->
+ <taxonset id="list_of_OTUs" spec="TaxonSet">
+  <taxon id="S_linnarssoni" spec="Taxon"/>
+  <taxon id="B_porrectus" spec="Taxon"/>
+  <taxon id="B_holei" spec="Taxon"/>
+  <taxon id="B_milleri" spec="Taxon"/>
+  <taxon id="B_beckeri" spec="Taxon"/>
+  <taxon id="B_tenuirugosus" spec="Taxon"/>
+  <taxon id="B_solangeae" spec="Taxon"/>
+  <taxon id="B_lenzi" spec="Taxon"/>
+  <taxon id="B_bellevillensis" spec="Taxon"/>
+  <taxon id="B_billingsi" spec="Taxon"/>
+  <taxon id="B_graffhami" spec="Taxon"/>
+  <taxon id="B_moundensis" spec="Taxon"/>
+  <taxon id="B_kimmswickensis" spec="Taxon"/>
+ </taxonset>
+ 
+ <!-- Taxon groupings (clades or other groups of interest) -->
+ <!-- A taxonset named total_group_LCA. Can be used for clade constraints and/or logging. -->
+ <taxonset id="total_group_LCA" spec="TaxonSet">
+  <taxon idref="S_linnarssoni"/>
+  <taxon idref="B_porrectus"/>
+  <taxon idref="B_holei"/>
+  <taxon idref="B_milleri"/>
+  <taxon idref="B_beckeri"/>
+  <taxon idref="B_tenuirugosus"/>
+  <taxon idref="B_solangeae"/>
+  <taxon idref="B_lenzi"/>
+  <taxon idref="B_bellevillensis"/>
+  <taxon idref="B_billingsi"/>
+  <taxon idref="B_graffhami"/>
+  <taxon idref="B_moundensis"/>
+  <taxon idref="B_kimmswickensis"/>
+ </taxonset>
+ <!-- A taxonset named ingroup1. Can be used for clade constraints and/or logging. -->
+ <taxonset id="ingroup1" spec="TaxonSet">
+  <taxon idref="B_porrectus"/>
+  <taxon idref="B_holei"/>
+  <taxon idref="B_milleri"/>
+  <taxon idref="B_beckeri"/>
+  <taxon idref="B_tenuirugosus"/>
+  <taxon idref="B_solangeae"/>
+  <taxon idref="B_lenzi"/>
+  <taxon idref="B_bellevillensis"/>
+  <taxon idref="B_billingsi"/>
+  <taxon idref="B_graffhami"/>
+  <taxon idref="B_moundensis"/>
+  <taxon idref="B_kimmswickensis"/>
+ </taxonset>
+ 
+ 
+ <!-- Tipdates for all taxa. Tipdates that will vary need to be   -->
+ <!-- specified in operators, and also have a prior distribution. -->
+ <!-- Number of fossils: you have 12 tips with ages > 0 Ma -->
+ <trait id="tipDates" spec="beast.evolution.tree.TraitSet" traitname="date-backward" units="year" value="S_linnarssoni=3.35000000000002,
+B_porrectus=8.94500000000002,
+B_holei=9.17000000000004,
+B_milleri=5.83000000000004,
+B_beckeri=0,
+B_tenuirugosus=6.76500000000001,
+B_solangeae=8.45000000000002,
+B_lenzi=12.8,
+B_bellevillensis=8.94000000000003,
+B_billingsi=10.04,
+B_graffhami=10.61,
+B_moundensis=13.55,
+B_kimmswickensis=9.20000000000005">
+  <!-- `taxa=` tag specifies the beast.evolution.alignment.TaxonSet which the tipdate names refer to. -->
+  <taxa alignment="@Bumastoides_v2simp_morph2_unordered" spec="beast.evolution.alignment.TaxonSet"/>
+ </trait>
+ 
+ 
+ <!-- A taxonset named fossil_taxa. Can be used for clade constraints and/or logging. -->
+ <taxonset id="fossil_taxa" spec="TaxonSet">
+  <taxon idref="S_linnarssoni"/>
+  <taxon idref="B_porrectus"/>
+  <taxon idref="B_holei"/>
+  <taxon idref="B_milleri"/>
+  <taxon idref="B_tenuirugosus"/>
+  <taxon idref="B_solangeae"/>
+  <taxon idref="B_lenzi"/>
+  <taxon idref="B_bellevillensis"/>
+  <taxon idref="B_billingsi"/>
+  <taxon idref="B_graffhami"/>
+  <taxon idref="B_moundensis"/>
+  <taxon idref="B_kimmswickensis"/>
+ </taxonset>
+ 
+ 
+ <!-- XML SECTION 3: Sequence alignments (e.g. DNA, morphology); filtered in later section to produce partitions -->
+ 
+ 
+ <!-- Results of get_numstates_per_char() on dataset: Bumastoides_v2simp -->
+ <!-- Filename: /drives/GDrive/__GDrive_projects/2016-09-01_Adrian_Lam_Stigall/02_BEAST/Bumastoides_v2simp/Bumastoides_v2simp.nex-->
+ 
+ <!-- There were 2 characters missing an implied state. -->
+ <!-- They were characters numbered: 10, 17 -->
+ <!-- E.g., states 013 were found, but not state 2. This character would get re-coded as 012. -->
+ <!-- (Beast complains if states are missing; this might be OK with ordered characters,  -->
+ <!--  but I have not explored it...NJM 2014-10-22)                                        -->
+ 
+ <!-- Number of characters that were all-unknown (?, dashes, etc.): 0 -->
+ <!-- They were:  -->
+ <!-- Any all-unknown characters will be cut from the Beast XML -->
+ 
+ <!-- Listing ORIGINAL data in PHYLIP format: -->
+ <!--
+13 20
+S_linnarssoni     00000?000000?0??0000
+B_porrectus       111111120??1101221?1
+B_holei           10111212121111122111
+B_milleri         101011101201?0002111
+B_beckeri         11?1?2220?01?10221?1
+B_tenuirugosus    10110022120111112111
+B_solangeae       1100?????20100122111
+B_lenzi           1100101??20110122111
+B_bellevillensis  10111111?2012?122111
+B_billingsi       1?0101?2?21110130111
+B_graffhami       1020?1121201?0012111
+B_moundensis      110012120201?1132111
+B_kimmswickensis  11111220020110122111
+-->
+ 
+ <!-- Listing CORRECTED data in PHYLIP format: -->
+ <!--
+13 20
+S_linnarssoni     00000?000000?0??0000
+B_porrectus       111111120??1101211?1
+B_holei           10111212111111121111
+B_milleri         101011101101?0001111
+B_beckeri         11?1?2220?01?10211?1
+B_tenuirugosus    10110022110111111111
+B_solangeae       1100?????10100121111
+B_lenzi           1100101??10110121111
+B_bellevillensis  10111111?1012?121111
+B_billingsi       1?0101?2?11110130111
+B_graffhami       1020?1121101?0011111
+B_moundensis      110012120101?1131111
+B_kimmswickensis  11111220010110121111
+-->
+ 
+ 
+ <!-- Character numbers in original matrix: -->
+ <!-- 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 -->
+ 
+ <!-- Datatype for a 2-state unordered character -->
+ <!--(all 2-state characters are unordered, duh!)-->
+ <userDataType id="datatype_Bumastoides_v2simp_morph2_unordered" spec="beast.evolution.datatype.UserDataType" states="2" codeMap="0=0, 1=1, -=0 1, ?=0 1, Z=0 1" codelength="1"/>
+ 
+ <!-- Datatype for a 3-state unordered character -->
+ <userDataType id="datatype_Bumastoides_v2simp_morph3_unordered" spec="beast.evolution.datatype.UserDataType" states="3" codeMap="0=0, 1=1, 2=2, -=0 1 2, ?=0 1 2, Z=0 1 2" codelength="1"/>
+ 
+ <!-- Datatype for a 4-state unordered character -->
+ <userDataType id="datatype_Bumastoides_v2simp_morph4_unordered" spec="beast.evolution.datatype.UserDataType" states="4" codeMap="0=0, 1=1, 2=2, 3=3, -=0 1 2 3, ?=0 1 2 3, Z=0 1 2 3" codelength="1"/>
+ 
+ <!-- morph unordered characters. Dataset: Bumastoides_v2simp. From: /drives/GDrive/__GDrive_projects/2016-09-01_Adrian_Lam_Stigall/02_BEAST/Bumastoides_v2simp/Bumastoides_v2simp.nex -->
+ 
+ <!--Indices of the characters in the 20 unordered characters subset from dataset: Bumastoides_v2simp: -->
+ <!-- 1, 2, 4, 5, 9, 10, 11, 12, 14, 15, 17, 18, 19, 20 -->
+ 
+ <!-- The ascertainment-bias model for these characters has been set to `Mkv` (Markov-k-variable). This corrects for the unobservability of invariant characters.
+
+Other ways of describing the ascertainment-bias correction:
+
+- The likelihood of these characters is conditioned on them being variable characters.
+- The characters are ascertained in a biased way, in that only variable characters are ascertained.
+
+In Beast2, this `ascertainment bias` is corrected for by setting up 2 dummy characters and adding them to the front of the alignment. In this case, for a 2-state character, that means adding `01` to the beginning of the character sequence for each taxon. During calculation of the likelihood, the likelihood of those 2 invariant `character patterns` is calculated, and the likelihood of each observed site is normalized by dividing by (1-likelihood of unobservable patterns).
+
+The basics of ascertainment bias correction are described in p. 163, equations 8-9, of:
+
+Felsenstein, Joseph (1992). Phylogenies from Restriction Sites: A Maximum-Likelihood Approach. Evolution, 46(1), 159-173. February 1992. http://www.jstor.org/stable/2409811
+
+ See also: https://groups.google.com/forum/#!topic/raxml/QOgSN8jRA2o
+ -->
+ 
+ <data id="Bumastoides_v2simp_morph2_unordered" dataType="user defined" ascertained="true" statecount="2" excludefrom="0" excludeto="2" excludeevery="1" strip="false" spec="beast.evolution.alignment.AscertainedAlignment">
+  <userDataType idref="datatype_Bumastoides_v2simp_morph2_unordered"/>
+  <sequence id="seq2_unordered_from_Bumastoides_v2simp_for_S_linnarssoni" taxon="S_linnarssoni" totalcount="2" value="01000000000Z0000"/>
+  <sequence id="seq2_unordered_from_Bumastoides_v2simp_for_B_porrectus" taxon="B_porrectus" totalcount="2" value="0111110ZZ10111Z1"/>
+  <sequence id="seq2_unordered_from_Bumastoides_v2simp_for_B_holei" taxon="B_holei" totalcount="2" value="0110111111111111"/>
+  <sequence id="seq2_unordered_from_Bumastoides_v2simp_for_B_milleri" taxon="B_milleri" totalcount="2" value="0110011101001111"/>
+  <sequence id="seq2_unordered_from_Bumastoides_v2simp_for_B_beckeri" taxon="B_beckeri" totalcount="2" value="01111Z0Z011011Z1"/>
+  <sequence id="seq2_unordered_from_Bumastoides_v2simp_for_B_tenuirugosus" taxon="B_tenuirugosus" totalcount="2" value="0110101101111111"/>
+  <sequence id="seq2_unordered_from_Bumastoides_v2simp_for_B_solangeae" taxon="B_solangeae" totalcount="2" value="01110ZZ101011111"/>
+  <sequence id="seq2_unordered_from_Bumastoides_v2simp_for_B_lenzi" taxon="B_lenzi" totalcount="2" value="011101Z101011111"/>
+  <sequence id="seq2_unordered_from_Bumastoides_v2simp_for_B_bellevillensis" taxon="B_bellevillensis" totalcount="2" value="011011Z101Z11111"/>
+  <sequence id="seq2_unordered_from_Bumastoides_v2simp_for_B_billingsi" taxon="B_billingsi" totalcount="2" value="011Z10Z111010111"/>
+  <sequence id="seq2_unordered_from_Bumastoides_v2simp_for_B_graffhami" taxon="B_graffhami" totalcount="2" value="01100Z1101001111"/>
+  <sequence id="seq2_unordered_from_Bumastoides_v2simp_for_B_moundensis" taxon="B_moundensis" totalcount="2" value="0111010101111111"/>
+  <sequence id="seq2_unordered_from_Bumastoides_v2simp_for_B_kimmswickensis" taxon="B_kimmswickensis" totalcount="2" value="0111110101011111"/>
+ </data>
+ 
+ <!--Indices of the characters in the 20 unordered characters subset from dataset: Bumastoides_v2simp: -->
+ <!-- 3, 6, 7, 8, 13 -->
+ 
+ <!-- The ascertainment-bias model for these characters has been set to `Mkv` (Markov-k-variable). This corrects for the unobservability of invariant characters.
+
+Other ways of describing the ascertainment-bias correction:
+
+- The likelihood of these characters is conditioned on them being variable characters.
+- The characters are ascertained in a biased way, in that only variable characters are ascertained.
+
+In Beast2, this `ascertainment bias` is corrected for by setting up 3 dummy characters and adding them to the front of the alignment. In this case, for a 3-state character, that means adding `012` to the beginning of the character sequence for each taxon. During calculation of the likelihood, the likelihood of those 3 invariant `character patterns` is calculated, and the likelihood of each observed site is normalized by dividing by (1-likelihood of unobservable patterns).
+
+The basics of ascertainment bias correction are described in p. 163, equations 8-9, of:
+
+Felsenstein, Joseph (1992). Phylogenies from Restriction Sites: A Maximum-Likelihood Approach. Evolution, 46(1), 159-173. February 1992. http://www.jstor.org/stable/2409811
+
+ See also: https://groups.google.com/forum/#!topic/raxml/QOgSN8jRA2o
+ -->
+ 
+ <data id="Bumastoides_v2simp_morph3_unordered" dataType="user defined" ascertained="true" statecount="3" excludefrom="0" excludeto="3" excludeevery="1" strip="false" spec="beast.evolution.alignment.AscertainedAlignment">
+  <userDataType idref="datatype_Bumastoides_v2simp_morph3_unordered"/>
+  <sequence id="seq3_unordered_from_Bumastoides_v2simp_for_S_linnarssoni" taxon="S_linnarssoni" totalcount="3" value="0120Z00Z"/>
+  <sequence id="seq3_unordered_from_Bumastoides_v2simp_for_B_porrectus" taxon="B_porrectus" totalcount="3" value="01211121"/>
+  <sequence id="seq3_unordered_from_Bumastoides_v2simp_for_B_holei" taxon="B_holei" totalcount="3" value="01212121"/>
+  <sequence id="seq3_unordered_from_Bumastoides_v2simp_for_B_milleri" taxon="B_milleri" totalcount="3" value="0121110Z"/>
+  <sequence id="seq3_unordered_from_Bumastoides_v2simp_for_B_beckeri" taxon="B_beckeri" totalcount="3" value="012Z222Z"/>
+  <sequence id="seq3_unordered_from_Bumastoides_v2simp_for_B_tenuirugosus" taxon="B_tenuirugosus" totalcount="3" value="01210221"/>
+  <sequence id="seq3_unordered_from_Bumastoides_v2simp_for_B_solangeae" taxon="B_solangeae" totalcount="3" value="0120ZZZ0"/>
+  <sequence id="seq3_unordered_from_Bumastoides_v2simp_for_B_lenzi" taxon="B_lenzi" totalcount="3" value="012001Z1"/>
+  <sequence id="seq3_unordered_from_Bumastoides_v2simp_for_B_bellevillensis" taxon="B_bellevillensis" totalcount="3" value="01211112"/>
+  <sequence id="seq3_unordered_from_Bumastoides_v2simp_for_B_billingsi" taxon="B_billingsi" totalcount="3" value="01201Z21"/>
+  <sequence id="seq3_unordered_from_Bumastoides_v2simp_for_B_graffhami" taxon="B_graffhami" totalcount="3" value="0122112Z"/>
+  <sequence id="seq3_unordered_from_Bumastoides_v2simp_for_B_moundensis" taxon="B_moundensis" totalcount="3" value="0120212Z"/>
+  <sequence id="seq3_unordered_from_Bumastoides_v2simp_for_B_kimmswickensis" taxon="B_kimmswickensis" totalcount="3" value="01212201"/>
+ </data>
+ 
+ <!--Indices of the characters in the 20 unordered characters subset from dataset: Bumastoides_v2simp: -->
+ <!-- 16 -->
+ 
+ <!-- The ascertainment-bias model for these characters has been set to `Mkv` (Markov-k-variable). This corrects for the unobservability of invariant characters.
+
+Other ways of describing the ascertainment-bias correction:
+
+- The likelihood of these characters is conditioned on them being variable characters.
+- The characters are ascertained in a biased way, in that only variable characters are ascertained.
+
+In Beast2, this `ascertainment bias` is corrected for by setting up 4 dummy characters and adding them to the front of the alignment. In this case, for a 4-state character, that means adding `0123` to the beginning of the character sequence for each taxon. During calculation of the likelihood, the likelihood of those 4 invariant `character patterns` is calculated, and the likelihood of each observed site is normalized by dividing by (1-likelihood of unobservable patterns).
+
+The basics of ascertainment bias correction are described in p. 163, equations 8-9, of:
+
+Felsenstein, Joseph (1992). Phylogenies from Restriction Sites: A Maximum-Likelihood Approach. Evolution, 46(1), 159-173. February 1992. http://www.jstor.org/stable/2409811
+
+ See also: https://groups.google.com/forum/#!topic/raxml/QOgSN8jRA2o
+ -->
+ 
+ <data id="Bumastoides_v2simp_morph4_unordered" dataType="user defined" ascertained="true" statecount="4" excludefrom="0" excludeto="4" excludeevery="1" strip="false" spec="beast.evolution.alignment.AscertainedAlignment">
+  <userDataType idref="datatype_Bumastoides_v2simp_morph4_unordered"/>
+  <sequence id="seq4_unordered_from_Bumastoides_v2simp_for_S_linnarssoni" taxon="S_linnarssoni" totalcount="4" value="0123Z"/>
+  <sequence id="seq4_unordered_from_Bumastoides_v2simp_for_B_porrectus" taxon="B_porrectus" totalcount="4" value="01232"/>
+  <sequence id="seq4_unordered_from_Bumastoides_v2simp_for_B_holei" taxon="B_holei" totalcount="4" value="01232"/>
+  <sequence id="seq4_unordered_from_Bumastoides_v2simp_for_B_milleri" taxon="B_milleri" totalcount="4" value="01230"/>
+  <sequence id="seq4_unordered_from_Bumastoides_v2simp_for_B_beckeri" taxon="B_beckeri" totalcount="4" value="01232"/>
+  <sequence id="seq4_unordered_from_Bumastoides_v2simp_for_B_tenuirugosus" taxon="B_tenuirugosus" totalcount="4" value="01231"/>
+  <sequence id="seq4_unordered_from_Bumastoides_v2simp_for_B_solangeae" taxon="B_solangeae" totalcount="4" value="01232"/>
+  <sequence id="seq4_unordered_from_Bumastoides_v2simp_for_B_lenzi" taxon="B_lenzi" totalcount="4" value="01232"/>
+  <sequence id="seq4_unordered_from_Bumastoides_v2simp_for_B_bellevillensis" taxon="B_bellevillensis" totalcount="4" value="01232"/>
+  <sequence id="seq4_unordered_from_Bumastoides_v2simp_for_B_billingsi" taxon="B_billingsi" totalcount="4" value="01233"/>
+  <sequence id="seq4_unordered_from_Bumastoides_v2simp_for_B_graffhami" taxon="B_graffhami" totalcount="4" value="01231"/>
+  <sequence id="seq4_unordered_from_Bumastoides_v2simp_for_B_moundensis" taxon="B_moundensis" totalcount="4" value="01233"/>
+  <sequence id="seq4_unordered_from_Bumastoides_v2simp_for_B_kimmswickensis" taxon="B_kimmswickensis" totalcount="4" value="01232"/>
+ </data>
+ 
+ 
+ <!-- XML SECTION 4: Partitions (filters applied to the sequence alignments produce partitions) -->
+ <!--                The tree+model confer likelihood on each partition.                        -->
+ 
+ 
+ 
+ <!-- XML SECTION 5: Miscellaneous                                         -->
+ <!--                (space for various extra parameters etc.)             -->
+ 
+ 
+ <!-- This is an exponential distribution used as the prior on each gamma shape parameter -->
+ <Exponential id="exponential_distrib_for_gammaShape_priors" name="distr">
+  <parameter id="exponential_mean_of_1" lower="0.0" upper="0.0" name="mean">1</parameter>
+ </Exponential>
+ 
+ 
+ <!-- XML SECTION 6: Site Models (sequence/morphology evolution models for each partition) -->
+ 
+ 
+ 
+ <!-- CUSTOM MORPHOLOGY RATE MATRICES FOR DISCRETE MORPHOLOGICAL CHARACTER EVOLUTION -->
+ 
+ 
+ <!-- rates for a 2x2, unordered character matrix; 2 off-diagonal rates -->
+ <parameter id="Bumastoides_v2simp_morph2_unordered_ratematrix" dimension="2" name="rates">1.0 1.0</parameter>
+ 
+ <!-- rates for a 3x3, unordered character matrix; 6 off-diagonal rates -->
+ <parameter id="Bumastoides_v2simp_morph3_unordered_ratematrix" dimension="6" name="rates">1.0 1.0 1.0 1.0 1.0 1.0</parameter>
+ 
+ <!-- rates for a 4x4, unordered character matrix; 12 off-diagonal rates -->
+ <parameter id="Bumastoides_v2simp_morph4_unordered_ratematrix" dimension="12" name="rates">1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</parameter>
+ 
+ 
+ <!-- CUSTOM MORPHOLOGY SUBSTITUTION MODELS FOR DISCRETE MORPHOLOGICAL CHARACTER EVOLUTION -->
+ 
+ 
+ <!-- substitution model for a 2x2, unordered character matrix; 2 off-diagonal rates -->
+ <substModel id="Bumastoides_v2simp_morph2_unordered_substModel" rates="@Bumastoides_v2simp_morph2_unordered_ratematrix" spec="GeneralSubstitutionModel">
+  <frequencies id="Bumastoides_v2simp_morph2_unordered_basefreqs" frequencies="0.5 0.5" spec="Frequencies"/>
+ </substModel>
+ 
+ <!-- substitution model for a 3x3, unordered character matrix; 6 off-diagonal rates -->
+ <substModel id="Bumastoides_v2simp_morph3_unordered_substModel" rates="@Bumastoides_v2simp_morph3_unordered_ratematrix" spec="GeneralSubstitutionModel">
+  <frequencies id="Bumastoides_v2simp_morph3_unordered_basefreqs" frequencies="0.333333333333333 0.333333333333333 0.333333333333333" spec="Frequencies"/>
+ </substModel>
+ 
+ <!-- substitution model for a 4x4, unordered character matrix; 12 off-diagonal rates -->
+ <substModel id="Bumastoides_v2simp_morph4_unordered_substModel" rates="@Bumastoides_v2simp_morph4_unordered_ratematrix" spec="GeneralSubstitutionModel">
+  <frequencies id="Bumastoides_v2simp_morph4_unordered_basefreqs" frequencies="0.25 0.25 0.25 0.25" spec="Frequencies"/>
+ </substModel>
+ 
+ 
+ <!-- CUSTOM MORPHOLOGY SITE MODELS FOR DISCRETE MORPHOLOGICAL CHARACTER EVOLUTION -->
+ 
+ 
+ <!-- siteModel for a 2x2, unordered character matrix; 2 off-diagonal rates; -->
+ <!-- gamma-distributed among-site rate variation with 4 categories, no invariant sites -->
+ <siteModel id="Bumastoides_v2simp_morph2_unordered_sitemodel" gammaCategoryCount="4" spec="SiteModel">
+  <parameter idref="morph_relRate" name="mutationRate"/>
+  <parameter idref="morph_gammaShape" name="shape"/>
+  <parameter id="Bumastoides_v2simp_morph2_unordered_pInv" lower="0.0" upper="1.0" name="proportionInvariant">0</parameter>
+  <substModel idref="Bumastoides_v2simp_morph2_unordered_substModel"/>
+ </siteModel>
+ 
+ <!-- siteModel for a 3x3, unordered character matrix; 6 off-diagonal rates; -->
+ <!-- gamma-distributed among-site rate variation with 4 categories, no invariant sites -->
+ <siteModel id="Bumastoides_v2simp_morph3_unordered_sitemodel" gammaCategoryCount="4" spec="SiteModel">
+  <parameter idref="morph_relRate" name="mutationRate"/>
+  <parameter idref="morph_gammaShape" name="shape"/>
+  <parameter id="Bumastoides_v2simp_morph3_unordered_pInv" lower="0.0" upper="1.0" name="proportionInvariant">0</parameter>
+  <substModel idref="Bumastoides_v2simp_morph3_unordered_substModel"/>
+ </siteModel>
+ 
+ <!-- siteModel for a 4x4, unordered character matrix; 12 off-diagonal rates; -->
+ <!-- gamma-distributed among-site rate variation with 4 categories, no invariant sites -->
+ <siteModel id="Bumastoides_v2simp_morph4_unordered_sitemodel" gammaCategoryCount="4" spec="SiteModel">
+  <parameter idref="morph_relRate" name="mutationRate"/>
+  <parameter idref="morph_gammaShape" name="shape"/>
+  <parameter id="Bumastoides_v2simp_morph4_unordered_pInv" lower="0.0" upper="1.0" name="proportionInvariant">0</parameter>
+  <substModel idref="Bumastoides_v2simp_morph4_unordered_substModel"/>
+ </siteModel>
+ 
+ 
+ <!-- Likelihood of morphology data given tree, model, morphology model parameters -->
+ 
+ <!-- Likelihood of Bumastoides_v2simp_morph2_unordered on the tree -->
+ <distribution id="Bumastoides_v2simp_morph2_unordered_treeLikelihood" spec="TreeLikelihood" data="@Bumastoides_v2simp_morph2_unordered" tree="@shared_tree" siteModel="@Bumastoides_v2simp_morph2_unordered_sitemodel" branchRateModel="@shared_clock" useAmbiguities="true"/>
+ 
+ <!-- Likelihood of Bumastoides_v2simp_morph3_unordered on the tree -->
+ <distribution id="Bumastoides_v2simp_morph3_unordered_treeLikelihood" spec="TreeLikelihood" data="@Bumastoides_v2simp_morph3_unordered" tree="@shared_tree" siteModel="@Bumastoides_v2simp_morph3_unordered_sitemodel" branchRateModel="@shared_clock" useAmbiguities="true"/>
+ 
+ <!-- Likelihood of Bumastoides_v2simp_morph4_unordered on the tree -->
+ <distribution id="Bumastoides_v2simp_morph4_unordered_treeLikelihood" spec="TreeLikelihood" data="@Bumastoides_v2simp_morph4_unordered" tree="@shared_tree" siteModel="@Bumastoides_v2simp_morph4_unordered_sitemodel" branchRateModel="@shared_clock" useAmbiguities="true"/>
+ 
+ 
+ <!-- XML SECTION 7: Shared clock model (strict, relaxed, etc.) -->
+ 
+ 
+ 
+ <!-- Shared clock model, named: shared_clock -->
+ 
+ <!-- strict: Strict clock with single branch rate -->
+ <branchRateModel id="shared_clock" clock.rate="@strictMean_of_shared_clock" spec="beast.evolution.branchratemodel.StrictClockModel"/>
+ 
+ 
+ <!-- XML SECTION 9: Shared tree model (Yule, Birth-Death (BD), Birth-Death Skyline (BDSKY), etc.) -->
+ 
+ 
+ <!-- Set up the BDSKY tree model: BirthDeathSkylineModel -->
+ <!-- (Other models, e.g. Yule (pure-birth), BD (birth-death), BDSS (BD, constant serial sampling) are special cases of BDSKY) -->
+ <!-- (Except the Birth-Death-Skyline-Sampled-Ancestor model) -->
+ <BirthDeathSkylineModel id="@shared_tree" tree="@shared_tree" contemp="false" spec="beast.evolution.speciation.BirthDeathSkylineModel">
+  
+  <!-- Starting parameters of the BirthDeathSkylineModel for the observed tree -->
+  
+  <!-- originTime: the start of the sampling+tree growth process -->
+  <!-- (This is a nuisance parameter, but its starting value must be older than the start tree root or Beast2 will crash) -->
+  <parameter id="originTime" lower="0.0" upper="4600" name="origin">100</parameter>
+  
+  <!-- birthRates (lambda: speciation or lineage splitting rates, oldest to youngest) -->
+  <parameter id="birthRate" name="birthRate" lower="0" upper="9" value="0.02"/>
+  <parameter id="birthRateChangeTimes_tops" name="birthRateChangeTimes" value="0"/>
+  
+  <!-- deathRates (mu: lineage extinction rates, oldest to youngest) -->
+  <parameter id="deathRate" name="deathRate" lower="0" upper="1" value="0.002"/>
+  <parameter id="deathRateChangeTimes_tops" name="deathRateChangeTimes" value="0"/>
+  
+  <!-- samplingRates (psi: rate of sampling per lineage per my)                  -->
+  <!-- sorted from youngest to oldest, but with zero at the end,                 -->
+  <!-- as specified by Denise on the beast-users group:                          -->
+  <!-- https://groups.google.com/d/msg/beast-users/UyAS0sYDkKk/PB0ktWnssn0J          -->
+  <!-- The actual psi samplingRates, though, are in order from oldest to youngest -->
+  <parameter id="samplingRate" name="samplingRate" lower="0" upper="9" value="0.002"/>
+  <parameter id="samplingRateChangeTimes_tops" name="samplingRateChangeTimes" value="0"/>
+  
+  <!-- rho (probability of sampling each lineage extant at a particular timepoint, typically the present, 0 Ma) -->
+  <parameter id="rho" name="rho" lower="0.0" value="1"/>
+  <parameter id="rhoSamplingTimes" name="rhoSamplingTimes" value="0"/>
+  
+  <!-- Are time arrays reversed, for birth, death, psi, rho, and R. Regardless, the parameter values are listed from oldest to youngest time bin. -->
+  <reverseTimeArrays id="reverseTimeArrays" spec="beast.core.parameter.BooleanParameter" value="true true true true true"/>
+ </BirthDeathSkylineModel>
+ 
+ 
+ <!-- Defining and logging the MCMC search chain -->
+ <run id="mcmc" chainLength="100000000" spec="MCMC">
+  
+  <state id="state" storeEvery="50000">
+   
+   
+   <!-- XML SECTION 10: MCMC states: the state of the MCMC chain saved at various timepoints -->
+   <!--                 (as a .state file, to allow the chain to be re-started later on)          -->
+   
+   
+   <!-- Shared clock model, named: shared_clock -->
+   
+   <!-- strict: Strict clock with single branch rate -->
+   <parameter id="strictMean_of_shared_clock" lower="0" upper="10" name="stateNode">0.01</parameter>
+   
+   <!-- Starting states for morphology model parameters -->
+   <parameter id="morph_relRate" name="stateNode">1</parameter>
+   <parameter id="morph_gammaShape" name="stateNode">1</parameter>
+   
+   <!-- State of the tree & tree model parameters during MCMC search -->
+   <stateNode idref="shared_tree"/>
+   <stateNode idref="originTime"/>
+   <stateNode idref="birthRate"/>
+   <stateNode idref="deathRate"/>
+   <stateNode idref="samplingRate"/>
+   <stateNode idref="birthRateChangeTimes_tops"/>
+   <stateNode idref="deathRateChangeTimes_tops"/>
+   <stateNode idref="samplingRateChangeTimes_tops"/>
+   <stateNode idref="rho"/>
+   <stateNode idref="rhoSamplingTimes"/>
+   <stateNode idref="reverseTimeArrays"/>
+   
+   <!-- Epidemiology version of a tree model -->
+   <!--<parameter dimension="10" id="samplingProportionS.t:shared_tree" lower="0.0" name="stateNode" upper="1.0">0.01</parameter>
+        <parameter dimension="10" id="becomeUninfectiousRateS.t:shared_tree" lower="0.0" name="stateNode" upper="10.0">1.0</parameter>
+        <parameter dimension="10" id="R0S.t:shared_tree" lower="0.0" name="stateNode" upper="10.0">2.0</parameter>-->
+   
+   <!-- RRB (Remco) suggested: add initialiser -->
+   <!-- Starting tree is constructed using random coalescence -->
+   <!--<stateNode id="shared_tree" initial="NULL" estimate="true" spec="beast.evolution.tree.RandomTree" taxa="@Bumastoides_v2simp_morph2_unordered" trait="@tipDates">
+ <populationModel id="ConstantPopulation_shared_tree" spec="ConstantPopulation">
+  <parameter id="randomPopSize_shared_tree" name="popSize">1</parameter>
+ </populationModel>
+</stateNode>-->
+   
+   <!-- RRB (Remco) suggested: add initialiser -->
+   <!-- Starting tree is constructed using UPGMA method (actually neighborjoining2) -->
+   <!--<stateNode id="shared_tree" initial="NULL" spec="beast.util.ClusterZBSATree" nodetype="beast.evolution.tree.ZeroBranchSANode" clusterType="neighborjoining2" taxa="@Bumastoides_v2simp_morph2_unordered" taxonset="list_of_OTUs" trait="@tipDates"/>-->
+   
+   <!-- RRB (Remco) suggested: add initialiser -->
+   <!-- Starting tree is user-specified Newick file from: -->
+   <!-- starting_tree.newick -->
+   <stateNode id="shared_tree" initial="NULL" IsLabelledNewick="true" adjustTipHeights="false" estimate="true" spec="beast.util.TreeParser" taxa="@Bumastoides_v2simp_morph2_unordered" threshold="0.001" newick="(((((((((B_beckeri:6.705916166,B_milleri:0.876966957):1.546002388,B_tenuirugosus:1.48804906):1.318202469,B_kimmswickensis:0.3711166419):1.167677727,((B_holei:0.4987396859,B_porrectus:0.723130323):0.3534654155,B_bellevillensis:1.081434324):0.7168577164):1.613545328,(B_graffhami:0.8250581934,B_solangeae:2.985513727):0.9171320773):0.3538415879,B_billingsi:2.666784376):0.7648722231,B_lenzi:0.6712445468):0.8158563226,B_moundensis:0.7367283851):1.375092864,S_linnarssoni:12.31183197):0;"/>
+  </state>
+  
+  
+  <!-- XML SECTION 8: Starting tree (random, user-fixed, etc.) -->
+  
+  
+  
+  
+  <!-- XML SECTION 11: MCMC states: initializers, with `init` tags -->
+  <!--                          -->
+  
+  
+  <distribution id="posterior" spec="util.CompoundDistribution">
+   <distribution id="prior" spec="util.CompoundDistribution">
+    
+    
+    <!-- XML SECTION 12: Priors -->
+    
+    
+    <!-- Priors on node dates and/or clade monophyly -->
+    <!-- (some might be unconstrained, just for logging purposes) -->
+    
+    <!-- NOTE: ConvertedForStartTree...Prior distribution on the date of monophyletic taxon: total_group_LCA -->
+    <distribution id="total_group_LCA_prior" monophyletic="true" spec="beast.math.distributions.MRCAPrior" tree="@shared_tree" useOriginate="false" tipsonly="false">
+     <taxonset idref="total_group_LCA"/>
+     <Normal id="total_group_LCA_prior_Normal" name="distr">
+      <parameter id="total_group_LCA_param_Normal_mean" name="mean" estimate="false">15</parameter>
+      <parameter id="total_group_LCA_param_Normal_stdev" name="sigma" estimate="false">15</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- NOTE: ConvertedForStartTree...Prior distribution on the date of monophyletic taxon: ingroup1 -->
+    <distribution id="ingroup1_prior" monophyletic="true" spec="beast.math.distributions.MRCAPrior" tree="@shared_tree" useOriginate="false" tipsonly="false">
+     <taxonset idref="ingroup1"/>
+     <Normal id="ingroup1_prior_Normal" name="distr">
+      <parameter id="ingroup1_param_Normal_mean" name="mean" estimate="false">10</parameter>
+      <parameter id="ingroup1_param_Normal_stdev" name="sigma" estimate="false">10</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- Prior probability density of the date of `S_linnarssoni`, according to a uniform distribution with lower=0.300000000000011, upper=6.40000000000003. -->
+    <distribution id="prP_UniformDistrib_S_linnarssoni" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_S_linnarssoni" spec="TaxonSet">
+      <taxon idref="S_linnarssoni" spec="Taxon"/>
+     </taxonset>
+     <Uniform id="UniformDistrib_S_linnarssoni" name="distr" offset="0" lower="0.300000000000011" upper="6.40000000000003"/>
+    </distribution>
+    
+    <!-- Prior probability density of the date of `B_porrectus`, according to a uniform distribution with lower=8.72000000000003, upper=9.17000000000002. -->
+    <distribution id="prP_UniformDistrib_B_porrectus" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_B_porrectus" spec="TaxonSet">
+      <taxon idref="B_porrectus" spec="Taxon"/>
+     </taxonset>
+     <Uniform id="UniformDistrib_B_porrectus" name="distr" offset="0" lower="8.72000000000003" upper="9.17000000000002"/>
+    </distribution>
+    
+    <!-- Prior probability density of the date of `B_holei`, according to a uniform distribution with lower=8.58000000000004, upper=9.76000000000005. -->
+    <distribution id="prP_UniformDistrib_B_holei" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_B_holei" spec="TaxonSet">
+      <taxon idref="B_holei" spec="Taxon"/>
+     </taxonset>
+     <Uniform id="UniformDistrib_B_holei" name="distr" offset="0" lower="8.58000000000004" upper="9.76000000000005"/>
+    </distribution>
+    
+    <!-- Prior probability density of the date of `B_milleri`, according to a uniform distribution with lower=0.330000000000041, upper=11.33. -->
+    <distribution id="prP_UniformDistrib_B_milleri" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_B_milleri" spec="TaxonSet">
+      <taxon idref="B_milleri" spec="Taxon"/>
+     </taxonset>
+     <Uniform id="UniformDistrib_B_milleri" name="distr" offset="0" lower="0.330000000000041" upper="11.33"/>
+    </distribution>
+    
+    <!-- Prior probability density of the date of `B_tenuirugosus`, according to a uniform distribution with lower=6.11000000000001, upper=7.42000000000002. -->
+    <distribution id="prP_UniformDistrib_B_tenuirugosus" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_B_tenuirugosus" spec="TaxonSet">
+      <taxon idref="B_tenuirugosus" spec="Taxon"/>
+     </taxonset>
+     <Uniform id="UniformDistrib_B_tenuirugosus" name="distr" offset="0" lower="6.11000000000001" upper="7.42000000000002"/>
+    </distribution>
+    
+    <!-- Prior probability density of the date of `B_solangeae`, according to a uniform distribution with lower=0, upper=16.9. -->
+    <distribution id="prP_UniformDistrib_B_solangeae" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_B_solangeae" spec="TaxonSet">
+      <taxon idref="B_solangeae" spec="Taxon"/>
+     </taxonset>
+     <Uniform id="UniformDistrib_B_solangeae" name="distr" offset="0" lower="0" upper="16.9"/>
+    </distribution>
+    
+    <!-- Prior probability density of the date of `B_lenzi`, according to a uniform distribution with lower=9.60000000000002, upper=16. -->
+    <distribution id="prP_UniformDistrib_B_lenzi" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_B_lenzi" spec="TaxonSet">
+      <taxon idref="B_lenzi" spec="Taxon"/>
+     </taxonset>
+     <Uniform id="UniformDistrib_B_lenzi" name="distr" offset="0" lower="9.60000000000002" upper="16"/>
+    </distribution>
+    
+    <!-- Prior probability density of the date of `B_bellevillensis`, according to a uniform distribution with lower=8.72000000000003, upper=9.16000000000003. -->
+    <distribution id="prP_UniformDistrib_B_bellevillensis" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_B_bellevillensis" spec="TaxonSet">
+      <taxon idref="B_bellevillensis" spec="Taxon"/>
+     </taxonset>
+     <Uniform id="UniformDistrib_B_bellevillensis" name="distr" offset="0" lower="8.72000000000003" upper="9.16000000000003"/>
+    </distribution>
+    
+    <!-- Prior probability density of the date of `B_billingsi`, according to a uniform distribution with lower=8.83000000000004, upper=11.25. -->
+    <distribution id="prP_UniformDistrib_B_billingsi" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_B_billingsi" spec="TaxonSet">
+      <taxon idref="B_billingsi" spec="Taxon"/>
+     </taxonset>
+     <Uniform id="UniformDistrib_B_billingsi" name="distr" offset="0" lower="8.83000000000004" upper="11.25"/>
+    </distribution>
+    
+    <!-- Prior probability density of the date of `B_graffhami`, according to a uniform distribution with lower=9.82000000000005, upper=11.4. -->
+    <distribution id="prP_UniformDistrib_B_graffhami" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_B_graffhami" spec="TaxonSet">
+      <taxon idref="B_graffhami" spec="Taxon"/>
+     </taxonset>
+     <Uniform id="UniformDistrib_B_graffhami" name="distr" offset="0" lower="9.82000000000005" upper="11.4"/>
+    </distribution>
+    
+    <!-- Prior probability density of the date of `B_moundensis`, according to a uniform distribution with lower=12.1, upper=15. -->
+    <distribution id="prP_UniformDistrib_B_moundensis" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_B_moundensis" spec="TaxonSet">
+      <taxon idref="B_moundensis" spec="Taxon"/>
+     </taxonset>
+     <Uniform id="UniformDistrib_B_moundensis" name="distr" offset="0" lower="12.1" upper="15"/>
+    </distribution>
+    
+    <!-- Prior probability density of the date of `B_kimmswickensis`, according to a uniform distribution with lower=8.70000000000005, upper=9.70000000000005. -->
+    <distribution id="prP_UniformDistrib_B_kimmswickensis" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_B_kimmswickensis" spec="TaxonSet">
+      <taxon idref="B_kimmswickensis" spec="Taxon"/>
+     </taxonset>
+     <Uniform id="UniformDistrib_B_kimmswickensis" name="distr" offset="0" lower="8.70000000000005" upper="9.70000000000005"/>
+    </distribution>
+    
+    <!-- Prior probability density of the mean of `shared_clock`, according to a uniform distribution with lower=0, upper=10. -->
+    <prior id="prP_UniformDistrib_on_mean_of_shared_clock" name="distribution" x="@strictMean_of_shared_clock">
+     <Uniform id="UniformDistrib_on_mean_of_shared_clock" name="distr" offset="0" lower="0" upper="10"/>
+    </prior>
+    
+    <!-- Prior probability density on the value of the parameter `strictMean_of_shared_clock`, according to a uniform distribution with lower=0, upper=10. -->
+    <prior id="prP_UniformDistrib_on_param_strictMean_of_shared_clock" name="distribution" x="@strictMean_of_shared_clock">
+     <Uniform id="UniformDistrib_on_param_strictMean_of_shared_clock" name="distr" offset="0" lower="0" upper="10"/>
+    </prior>
+    
+    <!-- Prior on parameter(s) for morphology evolution model -->
+    
+    <!-- Prior density of the gamma shape parameter for morphology -->
+    <prior id="morph_gammaShape_prior" distr="@exponential_distrib_for_gammaShape_priors" name="distribution" x="@morph_gammaShape"/>
+    
+    <!-- Prior probability distributions of tree model parameters -->
+    
+    <!-- Uniform prior on the time of origin of the process (assumes my) -->
+    <!-- x means whatever parameter you are assessing via the distribution -->
+    <prior id="prior_originTime" name="distribution" x="@originTime">
+     <Uniform id="prior_originTime_Uniform_distrib" lower="0.0" upper="4600.0" name="distr"/>
+    </prior>
+    
+    <!-- Priors on birthRate(s) -->
+    
+    <!-- Prior probability density on the value of the parameter `birthRate`, according to a uniform distribution with lower=0, upper=9. -->
+    <prior id="prP_UniformDistrib_on_param_birthRate" name="distribution" x="@birthRate">
+     <Uniform id="UniformDistrib_on_param_birthRate" name="distr" offset="0" lower="0" upper="9"/>
+    </prior>
+    
+    <!-- Priors on deathRate(s) -->
+    
+    <!-- Prior probability density on the value of the parameter `deathRate`, according to a uniform distribution with lower=0, upper=9. -->
+    <prior id="prP_UniformDistrib_on_param_deathRate" name="distribution" x="@deathRate">
+     <Uniform id="UniformDistrib_on_param_deathRate" name="distr" offset="0" lower="0" upper="9"/>
+    </prior>
+    
+    <!-- Prior on samplingRate(s) -->
+    
+    <!-- Prior probability density on the value of the parameter `samplingRate`, according to a uniform distribution with lower=0, upper=9. -->
+    <prior id="prP_UniformDistrib_on_param_samplingRate" name="distribution" x="@samplingRate">
+     <Uniform id="UniformDistrib_on_param_samplingRate" name="distr" offset="0" lower="0" upper="9"/>
+    </prior>
+    
+    <!-- Also: we are assuming for now that rho at time 0 is fixed -->
+    
+    <!-- Probability of MCMC sampled tree given treeModel parameters -->
+    <distribution id="BDSKY_prior_shared_tree" spec="beast.evolution.speciation.BirthDeathSkylineModel" tree="@shared_tree" origin="@originTime" birthRate="@birthRate" birthRateChangeTimes="@birthRateChangeTimes_tops" deathRate="@deathRate" deathRateChangeTimes="@deathRateChangeTimes_tops" samplingRate="@samplingRate" samplingRateChangeTimes="@samplingRateChangeTimes_tops" rho="@rho" rhoSamplingTimes="@rhoSamplingTimes" reverseTimeArrays="@reverseTimeArrays"/>
+   </distribution>
+   <distribution id="likelihood" spec="util.CompoundDistribution">
+    
+    
+    <!-- XML SECTION 13: Likelihoods -->
+    
+    
+    <!-- idrefs for additional likelihoods -->
+    
+    <!-- Likelihood of morphology data given tree, model, morphology model parameters -->
+    
+    <!-- Likelihood of Bumastoides_v2simp_morph2_unordered on the tree -->
+    <distribution idref="Bumastoides_v2simp_morph2_unordered_treeLikelihood"/>
+    
+    <!-- Likelihood of Bumastoides_v2simp_morph3_unordered on the tree -->
+    <distribution idref="Bumastoides_v2simp_morph3_unordered_treeLikelihood"/>
+    
+    <!-- Likelihood of Bumastoides_v2simp_morph4_unordered on the tree -->
+    <distribution idref="Bumastoides_v2simp_morph4_unordered_treeLikelihood"/>
+   </distribution>
+  </distribution>
+  
+  
+  
+  <!-- Operators to change the dates of the (individual) fossil tipdates -->
+  
+  
+  <!-- XML SECTION 14: Operators. These specify how the parameter values can change at MCMC time-steps. -->
+  
+  <!-- Additional operators -->
+  <operator id="TipDatesRandomWalker_S_linnarssoni" windowSize="3.05000000000001" taxonset="@age_of_S_linnarssoni" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_B_porrectus" windowSize="0.224999999999994" taxonset="@age_of_B_porrectus" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_B_holei" windowSize="0.590000000000003" taxonset="@age_of_B_holei" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_B_milleri" windowSize="5.5" taxonset="@age_of_B_milleri" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_B_tenuirugosus" windowSize="0.655000000000001" taxonset="@age_of_B_tenuirugosus" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_B_solangeae" windowSize="8.45000000000002" taxonset="@age_of_B_solangeae" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_B_lenzi" windowSize="3.19999999999999" taxonset="@age_of_B_lenzi" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_B_bellevillensis" windowSize="0.219999999999999" taxonset="@age_of_B_bellevillensis" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_B_billingsi" windowSize="1.20999999999998" taxonset="@age_of_B_billingsi" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_B_graffhami" windowSize="0.789999999999992" taxonset="@age_of_B_graffhami" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_B_moundensis" windowSize="1.44999999999999" taxonset="@age_of_B_moundensis" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_B_kimmswickensis" windowSize="0.5" taxonset="@age_of_B_kimmswickensis" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  
+  
+  <!-- Operators on Strict Clock (strict) rate (mean): shared_clock -->
+  
+  <!-- Operators on the clock mean -->
+  <operator id="strictMean_of_shared_clock_scaler" parameter="@strictMean_of_shared_clock" scaleFactor="0.5" spec="ScaleOperator" weight="3.0"/>
+  <operator id="strictMean_of_shared_clock_relaxedUpDownOperator" scaleFactor="0.75" spec="UpDownOperator" weight="3.0">
+   <parameter idref="strictMean_of_shared_clock" name="up"/>
+   <tree idref="shared_tree" name="down"/>
+  </operator>
+  <operator id="ClockRateScaler_shared_clock" parameter="@strictMean_of_shared_clock" spec="ScaleOperator" weight="3.0" scaleFactor="0.5"/>
+  
+  <!-- Operator for scaling the gamma shape parameter for morphology -->
+  <operator id="morph_gammaShape_Scaler" parameter="@morph_gammaShape" scaleFactor="0.5" spec="ScaleOperator" weight="0.1"/>
+  
+  <!-- Operators on the tree model parameters -->
+  <!-- (commented out unless specified as estimated in Excel settings file) -->
+  <operator id="rateScaler_birthRate_shared_tree" parameter="@birthRate" scaleFactor="0.75" weight="10.0" spec="ScaleOperator"/>
+  <operator id="rateScaler_deathRate_shared_tree" parameter="@deathRate" scaleFactor="0.75" weight="10.0" spec="ScaleOperator"/>
+  <operator id="rateScaler_samplingRate_shared_tree" parameter="@samplingRate" scaleFactor="0.75" weight="10.0" spec="ScaleOperator"/>
+  <!-- <operator id="rateScaler_rho_shared_tree" parameter="@rho" scaleFactor="0.75" weight="10.0" spec="ScaleOperator"/> -->
+  <operator id="rateScaler_originTime_shared_tree" parameter="@originTime" scaleFactor="0.75" weight="1.0" spec="ScaleOperator"/>
+  
+  <!-- Operators on the phylogeny (topology and node dates; tip dates could be added) -->
+  <operator id="treeScaler_shared_tree" tree="@shared_tree" scaleFactor="0.5" weight="3.0" spec="ScaleOperator"/>
+  <operator id="treeRootScaler_shared_tree" tree="@shared_tree" scaleFactor="0.5" weight="3.0" spec="ScaleOperator"/>
+  <operator id="UniformOperator_shared_tree" tree="@shared_tree" weight="30.0" spec="Uniform"/>
+  <operator id="SubtreeSlide_shared_tree" tree="@shared_tree" weight="15.0" spec="SubtreeSlide"/>
+  <operator id="narrowExchange_shared_tree" tree="@shared_tree" weight="15.0" spec="Exchange"/>
+  <operator id="wideExchange_shared_tree" tree="@shared_tree" isNarrow="false" weight="3.0" spec="Exchange"/>
+  
+  <!-- Not sure what this does: NJM 2014-12-01 -->
+  <operator id="WilsonBalding_shared_tree" tree="@shared_tree" weight="3.0" spec="WilsonBalding"/>
+  
+  
+  <logger id="tracelog" fileName="traceLog2.txt" logEvery="50000" model="@posterior" sanitiseHeaders="true" sort="smart">
+   <log idref="posterior"/>
+   <log idref="prior"/>
+   <log idref="likelihood"/>
+   
+   <!-- Log the sampled (individual) tipdates and the prior probability densities (prP) of them -->
+   
+   
+   <!-- XML SECTION 15: Trace log. This logs the parameters in a .log file, which may be viewed in Tracer. -->
+   <!-- Reporting node dates/monophyly to trace log -->
+   <log idref="total_group_LCA_prior"/>
+   <log idref="ingroup1_prior"/>
+   
+   <!-- Additional logs -->
+   <log idref="prP_UniformDistrib_S_linnarssoni"/>
+   <log idref="prP_UniformDistrib_B_porrectus"/>
+   <log idref="prP_UniformDistrib_B_holei"/>
+   <log idref="prP_UniformDistrib_B_milleri"/>
+   <log idref="prP_UniformDistrib_B_tenuirugosus"/>
+   <log idref="prP_UniformDistrib_B_solangeae"/>
+   <log idref="prP_UniformDistrib_B_lenzi"/>
+   <log idref="prP_UniformDistrib_B_bellevillensis"/>
+   <log idref="prP_UniformDistrib_B_billingsi"/>
+   <log idref="prP_UniformDistrib_B_graffhami"/>
+   <log idref="prP_UniformDistrib_B_moundensis"/>
+   <log idref="prP_UniformDistrib_B_kimmswickensis"/>
+   
+   <!-- Trace log of the `shared_clock`clock model -->
+   <parameter idref="strictMean_of_shared_clock" name="log"/>
+   
+   <!-- Log of rate statistics: rate.mean, rate.variance, rate.coefficientOfVariation -->
+   <!-- coefficient of variation = stdev / mean = sqrt(variance)/mean -->
+   <log id="rate_summary_shared_clock" branchratemodel="@shared_clock" tree="@shared_tree" spec="beast.evolution.branchratemodel.RateStatistic"/>
+   
+   <!-- Log of the prior probability density of the sampled mean of this clock -->
+   <log idref="prP_UniformDistrib_on_mean_of_shared_clock"/>
+   
+   
+   <log idref="strictMean_of_shared_clock"/>
+   
+   <!-- Likelihood of morphology data given tree, model, morphology model parameters -->
+   <log idref="Bumastoides_v2simp_morph2_unordered_treeLikelihood"/>
+   <log idref="Bumastoides_v2simp_morph3_unordered_treeLikelihood"/>
+   <log idref="Bumastoides_v2simp_morph4_unordered_treeLikelihood"/>
+   
+   <!-- Log of the gamma shape parameter for morphology -->
+   <log idref="morph_gammaShape"/>
+   
+   <!-- Log of prior density of the gamma shape parameter for morphology -->
+   <log idref="morph_gammaShape_prior"/>
+   
+   <!-- Log the probability of the tree given the treeModel parameters-->
+   <log idref="BDSKY_prior_shared_tree"/>
+   
+   <!-- Log the prior probability of the treeModel parameters-->
+   <log idref="originTime"/>
+   <log idref="birthRate"/>
+   <log idref="deathRate"/>
+   <log idref="samplingRate"/>
+   <log idref="rho"/>
+   
+   <!-- Log of the value of the parameter `birthRate` -->
+   
+   <!-- Log of the prior probability density of value of the parameter `birthRate` -->
+   <log idref="prP_UniformDistrib_on_param_birthRate"/>
+   
+   <!-- Log of the value of the parameter `deathRate` -->
+   
+   <!-- Log of the prior probability density of value of the parameter `deathRate` -->
+   <log idref="prP_UniformDistrib_on_param_deathRate"/>
+   
+   <!-- Log of the value of the parameter `samplingRate` -->
+   
+   <!-- Log of the prior probability density of value of the parameter `samplingRate` -->
+   <log idref="prP_UniformDistrib_on_param_samplingRate"/>
+  </logger>
+  
+  
+  <logger id="screenlog" fileName="" logEvery="50000" sanitiseHeaders="true" sort="smart">
+   <log idref="posterior"/>
+   <log idref="prior"/>
+   <log idref="likelihood"/>
+   
+   
+   <!-- XML SECTION 16: Screen log. Which parameters print to screen, and how often? -->
+   
+   <!-- Reporting node dates/monophyly to screen log -->
+   <log idref="total_group_LCA_prior"/>
+   <log idref="ingroup1_prior"/>
+   
+   <!-- Additional logs -->
+   
+   <!-- log of the clock mean for model `shared_clock` -->
+   <parameter idref="strictMean_of_shared_clock" name="log"/>
+   
+   <!-- Likelihood of morphology data given tree, model, morphology model parameters -->
+   <log idref="Bumastoides_v2simp_morph2_unordered_treeLikelihood"/>
+   <log idref="Bumastoides_v2simp_morph3_unordered_treeLikelihood"/>
+   <log idref="Bumastoides_v2simp_morph4_unordered_treeLikelihood"/>
+   
+   <!-- Log the probability of the tree given the treeModel parameters-->
+   <log idref="BDSKY_prior_shared_tree"/>
+   
+   <!-- Log the prior probability of the treeModel parameters-->
+   <log idref="originTime"/>
+   <log idref="birthRate"/>
+   <log idref="deathRate"/>
+   <log idref="samplingRate"/>
+   <log idref="rho"/>
+  </logger>
+  
+  
+  <logger id="treelog" fileName="treeLog2.txt" logEvery="50000" mode="tree">
+   
+   
+   <!-- XML SECTION 17: Tree log. How often should time trees from the MCMC chain be saved, and what data should they have? -->
+   <!--       (these are trees where the branch lengths are in time units, e.g. millions of years )                    -->
+   <!--   NOTE: this file can get HUGE if you sample too frequently. You just want a few thousand samples at the end.       -->
+   
+   <!-- Log the tree and branch rates -->
+   <log id="TreeWithMetaDataLogger_shared_tree" tree="@shared_tree" branchratemodel="@shared_clock" substitutions="false" spec="beast.evolution.tree.TreeWithMetaDataLogger"/>
+  </logger>
+  
+  
+  <logger id="subslog" fileName="subsLog2.txt" logEvery="50000" mode="tree">
+   
+   
+   <!-- XML SECTION 18: Substitutions Tree log. How often should these trees be saved, and what data should they have?      -->
+   <!--         (these are trees where the branch lengths are the expected number of substitutions, i.e. rate * time)      -->
+   <!--   NOTE: this file can get HUGE if you sample too frequently. You just want a few thousand samples at the end.      -->
+   
+   <!-- Log the tree and branch rates -->
+   <log id="Subs_TreeWithMetaDataLogger_shared_tree" tree="@shared_tree" substitutions="true" spec="beast.evolution.tree.TreeWithMetaDataLogger"/>
+  </logger>
+  
+  
+  
+  
+ </run>
+</beast>

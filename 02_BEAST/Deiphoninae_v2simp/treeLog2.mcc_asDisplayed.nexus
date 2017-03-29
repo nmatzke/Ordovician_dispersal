@@ -1,0 +1,59 @@
+#NEXUS
+[R-package APE, Sun Sep  4 18:18:07 2016]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 23;
+	TAXLABELS
+		Actinopeltis_globosa
+		Actinopeltis_carolialexandri
+		H_elliptica
+		H_huebneri
+		H_pseudohemicranium
+		S_cranium
+		S_longispina
+		S_gemina
+		S_murphyi
+		S_kingi
+		S_dentata
+		S_robustus
+		S_maquoketensis
+		S_goodnovi
+		S_exserta
+		D_grovesi
+		D_bainsi
+		D_ellipticum
+		D_fleur
+		D_longifrons
+		O_liversidgei
+		D_barrandei
+		D_globifrons
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Actinopeltis_globosa,
+		2	Actinopeltis_carolialexandri,
+		3	H_elliptica,
+		4	H_huebneri,
+		5	H_pseudohemicranium,
+		6	S_cranium,
+		7	S_longispina,
+		8	S_gemina,
+		9	S_murphyi,
+		10	S_kingi,
+		11	S_dentata,
+		12	S_robustus,
+		13	S_maquoketensis,
+		14	S_goodnovi,
+		15	S_exserta,
+		16	D_grovesi,
+		17	D_bainsi,
+		18	D_ellipticum,
+		19	D_fleur,
+		20	D_longifrons,
+		21	O_liversidgei,
+		22	D_barrandei,
+		23	D_globifrons
+	;
+	TREE * UNTITLED = [&R] ((1:0.9149678722,2:7.78646253):13.60327147,((3:0.9570798427,(4:2.265722036,5:3.276887178):6.233875588):2.857196733,(6:1.220698096,(((7:1.441037469,8:2.028028242):2.050554819,(9:1.358613256,(10:0.201643616,11:-0.1510010958):1.472540289):1.480690837):4.03119424,(12:1.367628723,(13:4.335867859,(14:1.347964242,(15:1.506132353,(16:3.120535851,(17:2.089237615,(18:5.1773628,(19:1.454492107,(20:3.22533381,(21:8.136957198,(22:1.643683314,23:1.139309943):0.4600581229):1.177377671):0.8007084876):2.245163605):4.979042202):1.492316216):11.15100097):4.724950578):0.3992280439):1.33993385):1.578645915):2.242156394):1.564405762):1.096492499):0;
+END;

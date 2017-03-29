@@ -1,0 +1,21 @@
+#NEXUS
+
+BEGIN DATA;
+	DIMENSIONS  NTAX=11 NCHAR=18;
+	FORMAT DATATYPE = STANDARD GAP = - MISSING = ? SYMBOLS = "  0 1";
+	MATRIX
+	D_tennesseensis 10000000000000(0 1)0(0 1)0
+	H_alveata       1(0 1)001011(0 1)1(0 1)0000(0 1)(0 1)1
+	H_bursa         1010001?00011001(0 1)1
+	H_frankfortensis	0111(0 1)0(0 1)10001010000
+	H_maria         0(0 1)0(0 1)1(0 1)110000111110
+	H_montoyensis   1?1?010011100(0 1)(0 1)???
+	H_occidentalis  (0 1)(0 1)(0 1)(0 1)(0 1)(0 1)1(0 1)11(0 1)(0 1)0(0 1)(0 1)(0 1)0(0 1)
+	H_parksensis    0(0 1)(0 1)(0 1)(0 1)1100001001011
+	H_prestonensis  11110100111010100(0 1)
+	H_richmondensis 110000000(0 1)11101101
+	H_subjugata     011111?00001010001
+
+;
+END;
+

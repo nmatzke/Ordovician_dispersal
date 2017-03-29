@@ -1,0 +1,12 @@
+11	5	(A C S U W)
+H_richmondensis	01000
+H_maria	00100
+H_alveata	01000
+H_prestonensis	00010
+H_montoyensis	00001
+H_occidentalis	11000
+H_subjugata	01000
+H_frankfortensis	11000
+H_parksensis	01000
+H_bursa	10000
+D_tennesseensis	10000

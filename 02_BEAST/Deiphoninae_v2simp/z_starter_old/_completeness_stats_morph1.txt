@@ -1,0 +1,24 @@
+OTU	nPar	nQ	nQ_woInvar	numchars	completePercent	numchars2	completePercent2
+1	Actinopeltis_globosa	0	3	3	24	88.89	24	88.89
+2	Actinopeltis_carolialexandri	0	2	2	25	92.59	25	92.59
+3	D_barrandei	0	0	0	27	100	27	100
+4	D_globifrons	0	0	0	27	100	27	100
+5	D_ellipticum	0	1	1	26	96.3	26	96.3
+6	D_bainsi	0	0	0	27	100	27	100
+7	D_grovesi	0	2	2	25	92.59	25	92.59
+8	D_longifrons	0	15	15	12	44.44	12	44.44
+9	D_fleur	0	18	18	9	33.33	9	33.33
+10	O_liversidgei	0	1	1	26	96.3	26	96.3
+11	S_robusta	0	0	0	27	100	27	100
+12	S_kingi	0	5	5	22	81.48	22	81.48
+13	S_dentata	0	1	1	26	96.3	26	96.3
+14	S_longispina	0	3	3	24	88.89	24	88.89
+15	S_cranium	0	2	2	25	92.59	25	92.59
+16	S_maquoketensis	0	4	4	23	85.19	23	85.19
+17	S_murphyi	0	6	6	21	77.78	21	77.78
+18	S_gemina	0	2	2	25	92.59	25	92.59
+19	S_goodnovi	0	0	0	27	100	27	100
+20	S_exserta	0	3	3	24	88.89	24	88.89
+21	H_huebneri	0	5	5	22	81.48	22	81.48
+22	H_pseudohemicranium	0	1	1	26	96.3	26	96.3
+23	H_elliptica	0	15	15	12	44.44	12	44.44

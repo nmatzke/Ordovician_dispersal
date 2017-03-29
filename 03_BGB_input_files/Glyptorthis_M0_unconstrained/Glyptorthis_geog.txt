@@ -1,0 +1,26 @@
+25	6	(A C P U V W)
+G_fausta	010000
+G_daytonensis	010000
+G_maquoketensis	100101
+G_insculpta	010000
+G_glaseri	000001
+G_pulchra	000100
+G_bellarugosa	000100
+G_assimilis	010000
+G_alta	000001
+G_irregularis	100000
+G_crenulata	000001
+G_subcircularis	000100
+G_multicostellata	100000
+G_uniformis	100000
+G_costellata	000001
+G_senecta	100000
+G_obesa	000001
+G_bellatula	100000
+G_concinnula	100001
+G_equiconvexa	100000
+G_uncicata	000001
+G_glypta	100001
+G_sulcata	001000
+H_biconvexa	100000
+H_australis	100010

@@ -1,0 +1,14 @@
+OTU	nPar	nQ	nQ_woInvar	numchars	completePercent	numchars2	completePercent2
+1	S_linnarssoni	0	4	4	16	80	16	80
+2	B_porrectus	0	3	3	17	85	17	85
+3	B_holei	0	0	0	20	100	20	100
+4	B_milleri	0	1	1	19	95	19	95
+5	B_beckeri	0	5	5	15	75	15	75
+6	B_tenuirugosus	0	0	0	20	100	20	100
+7	B_solangeae	0	5	5	15	75	15	75
+8	B_lenzi	0	2	2	18	90	18	90
+9	B_bellevillensis	0	2	2	18	90	18	90
+10	B_billingsi	0	3	3	17	85	17	85
+11	B_graffhami	0	2	2	18	90	18	90
+12	B_moundensis	0	1	1	19	95	19	95
+13	B_kimmswickensis	0	0	0	20	100	20	100

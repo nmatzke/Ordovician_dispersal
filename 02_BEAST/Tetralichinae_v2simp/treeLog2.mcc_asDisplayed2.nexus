@@ -1,0 +1,39 @@
+#NEXUS
+[R-package APE, Sun Sep  4 00:13:56 2016]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 13;
+	TAXLABELS
+		A_cucullus
+		A_aspratilis
+		A_subpunctatus
+		A_conradi
+		A_lineatus
+		A_effnensis
+		A_encyrtos
+		A_jukesi
+		P_robbinsi
+		P_pandus
+		P_kristiae
+		L_bronnikovi
+		Lichas_laciniatus
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	A_cucullus,
+		2	A_aspratilis,
+		3	A_subpunctatus,
+		4	A_conradi,
+		5	A_lineatus,
+		6	A_effnensis,
+		7	A_encyrtos,
+		8	A_jukesi,
+		9	P_robbinsi,
+		10	P_pandus,
+		11	P_kristiae,
+		12	L_bronnikovi,
+		13	Lichas_laciniatus
+	;
+	TREE * UNTITLED = [&R] ((((((((((1:0.814810073,2:0.3678277042):0.5646336516,3:0.2599500688):0.4763948126,4:1.28281571):0.7059140429,5:1.232726406):1.764437728,6:1.071170673):0.7912589461,7:-0.02716982365):1.671033949,8:2.157693701):1.070280459,((9:1.212871118,10:0.897795869):0.6926957052,11:4.341549363):2.586971655):2.247624639,12:3.464921355):1.025162816,13:21.30446815):0;
+END;

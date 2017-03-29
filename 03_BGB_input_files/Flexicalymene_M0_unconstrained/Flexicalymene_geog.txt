@@ -1,0 +1,17 @@
+16	8	(A B C P S U V W)
+Gravicalymene_sp	00100000
+Gravicalymene_truncatus	00100000
+F_praelongicephala	00000100
+F_quadricapita	00000100
+F_granulosa	00100000
+F_meeki	10110101
+F_retrorsa_retrorsa	00100000
+F_retrorsa_minuens	00100000
+F_onniensis	00000010
+F_senaria	10010101
+F_scabustula	01000000
+F_jemtlandica	01000000
+F_caractaci	00000010
+F_verecunda	00001000
+F_cavei	00000010
+F_planimarginata	00000010

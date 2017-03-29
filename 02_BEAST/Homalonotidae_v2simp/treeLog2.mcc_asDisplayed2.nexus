@@ -1,0 +1,45 @@
+#NEXUS
+[R-package APE, Sun Sep  4 19:26:55 2016]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 16;
+	TAXLABELS
+		P_christyi
+		P_dentata
+		P_vulcani
+		P_dyaulax
+		B_trentonensis
+		B_bisulcata
+		T_delphinocephalus
+		C_alcantarae
+		C_boisselli
+		E_sdzuyi
+		P_oehlerti
+		P_vacuvertis
+		P_exul
+		C_rouaulti
+		C_arago
+		Neseuretus
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	P_christyi,
+		2	P_dentata,
+		3	P_vulcani,
+		4	P_dyaulax,
+		5	B_trentonensis,
+		6	B_bisulcata,
+		7	T_delphinocephalus,
+		8	C_alcantarae,
+		9	C_boisselli,
+		10	E_sdzuyi,
+		11	P_oehlerti,
+		12	P_vacuvertis,
+		13	P_exul,
+		14	C_rouaulti,
+		15	C_arago,
+		16	Neseuretus
+	;
+	TREE * UNTITLED = [&R] ((((((1:2.01713714,2:0.9424628317):2.542649843,(3:0.3980042106,4:0.9918012619):0.5698057488):1.55135823,((5:1.675637946,6:2.20750352):-1.014492594,7:27.49499929):6.48407425):5.755346522,((8:0.8409538269,9:1.587366715):4.919430256,10:2.626853943):8.942896128):3.714899302,(((11:0.5646742955,12:0.8139317352):1.362136252,13:1.67580618):4.63715224,(14:1.355544269,15:1.157186955):4.324010834):4.402501538):1.931358337,16:5.627373967):0;
+END;

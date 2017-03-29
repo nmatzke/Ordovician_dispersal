@@ -1,0 +1,17 @@
+OTU	nPar	nQ	nQ_woInvar	numchars	completePercent	numchars2	completePercent2
+1	S_socialis	6	3	3	21	70	21	70
+2	S_rugosa	5	11	11	14	46.67	14	46.67
+3	E_advena	12	6	6	12	40	12	40
+4	E_aspera	3	1	1	26	86.67	26	86.67
+5	E_maearum	7	11	11	12	40	12	40
+6	E_celticus	1	17	17	12	40	12	40
+7	E_clarksvillensis	11	1	1	18	60	18	60
+8	E_minerva	8	3	3	19	63.33	19	63.33
+9	E_dignata	3	6	6	21	70	21	70
+10	E_johnsonella	5	2	2	23	76.67	23	76.67
+11	E_magna	17	2	2	11	36.67	11	36.67
+12	E_mucronata	3	3	3	24	80	24	80
+13	E_recedens	17	0	0	13	43.33	13	43.33
+14	E_voldemortus	0	15	15	15	50	15	50
+15	E_vaurealensis	5	2	2	23	76.67	23	76.67
+16	E_glabra	3	1	1	26	86.67	26	86.67

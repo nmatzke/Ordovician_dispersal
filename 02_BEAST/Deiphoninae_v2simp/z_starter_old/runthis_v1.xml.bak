@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beast beautitemplate="Standard" beautistatus="" namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" version="2.0">
+ 
+ 
+ <!-- XML SECTION 1: Header and Beast2 Java class references / mappings -->
+ 
+ 
+ <!-- A list of class mappings used in this Beast2 XML -->
+ <map name="SiteModel">beast.evolution.sitemodel.SiteModel</map>
+ <map name="Beta">beast.math.distributions.Beta</map>
+ <map name="Exponential">beast.math.distributions.Exponential</map>
+ <map name="InverseGamma">beast.math.distributions.InverseGamma</map>
+ <map name="LogNormal">beast.math.distributions.LogNormalDistributionModel</map>
+ <map name="Gamma">beast.math.distributions.Gamma</map>
+ <map name="Uniform">beast.math.distributions.Uniform</map>
+ <map name="prior">beast.math.distributions.Prior</map>
+ <map name="LaplaceDistribution">beast.math.distributions.LaplaceDistribution</map>
+ <map name="OneOnX">beast.math.distributions.OneOnX</map>
+ <map name="Normal">beast.math.distributions.Normal</map>
+ 
+ 
+ <!-- This XML file was written using BEASTmasteR at 2016-09-02 21:48:46-->
+ 
+ <!-- BEASTmasteR took a lot of work.  Please cite if you use! Citation info: -->
+ <!-- Matzke, Nicholas J. (2014). "BEASTmasteR: Automated conversion of NEXUS data to BEAST2 XML format, for fossil tip-dating and other uses." Online at PhyloWiki, http://phylo.wikidot.com/beastmaster. Accessed (access date). -->
+ 
+ <!-- Information & citation on the data source(s) that went into this XML: -->
+ <!-- (it is crucial to track, and cite, your data sources!) -->
+ 
+ <!-- Dataset from Adrian Lam; BEASTmasteR by Nick Matzke -->
+ 
+ 
+ 
+ <!-- XML SECTION 2: Taxa and clade definitions (and tip-dates if desired) -->
+ <!--                (Anything you want to constrain and/or log)           -->
+ 
+ <!-- A taxonset named list_of_OTUs. Can be used for clade constraints and/or logging. -->
+ <taxonset id="list_of_OTUs" spec="TaxonSet">
+  <taxon id="Actinopeltis_globosa" spec="Taxon"/>
+  <taxon id="Actinopeltis_carolialexandri" spec="Taxon"/>
+  <taxon id="D_barrandei" spec="Taxon"/>
+  <taxon id="D_globifrons" spec="Taxon"/>
+  <taxon id="D_ellipticum" spec="Taxon"/>
+  <taxon id="D_bainsi" spec="Taxon"/>
+  <taxon id="D_grovesi" spec="Taxon"/>
+  <taxon id="D_longifrons" spec="Taxon"/>
+  <taxon id="D_fleur" spec="Taxon"/>
+  <taxon id="O_liversidgei" spec="Taxon"/>
+  <taxon id="S_robusta" spec="Taxon"/>
+  <taxon id="S_dentata" spec="Taxon"/>
+  <taxon id="S_longispina" spec="Taxon"/>
+  <taxon id="S_cranium" spec="Taxon"/>
+  <taxon id="S_maquoketensis" spec="Taxon"/>
+  <taxon id="S_murphyi" spec="Taxon"/>
+  <taxon id="S_gemina" spec="Taxon"/>
+  <taxon id="S_goodnovi" spec="Taxon"/>
+  <taxon id="S_exserta" spec="Taxon"/>
+  <taxon id="H_huebneri" spec="Taxon"/>
+  <taxon id="H_pseudohemicranium" spec="Taxon"/>
+  <taxon id="H_elliptica" spec="Taxon"/>
+ </taxonset>
+ 
+ <!-- Taxon groupings (clades or other groups of interest) -->
+ <!-- A taxonset named total_group_LCA. Can be used for clade constraints and/or logging. -->
+ <taxonset id="total_group_LCA" spec="TaxonSet">
+  <taxon idref="Actinopeltis_globosa"/>
+  <taxon idref="Actinopeltis_carolialexandri"/>
+  <taxon idref="D_barrandei"/>
+  <taxon idref="D_globifrons"/>
+  <taxon idref="D_ellipticum"/>
+  <taxon idref="D_bainsi"/>
+  <taxon idref="D_grovesi"/>
+  <taxon idref="D_longifrons"/>
+  <taxon idref="D_fleur"/>
+  <taxon idref="O_liversidgei"/>
+  <taxon idref="S_robusta"/>
+  <taxon idref="S_dentata"/>
+  <taxon idref="S_longispina"/>
+  <taxon idref="S_cranium"/>
+  <taxon idref="S_maquoketensis"/>
+  <taxon idref="S_murphyi"/>
+  <taxon idref="S_gemina"/>
+  <taxon idref="S_goodnovi"/>
+  <taxon idref="S_exserta"/>
+  <taxon idref="H_huebneri"/>
+  <taxon idref="H_pseudohemicranium"/>
+  <taxon idref="H_elliptica"/>
+ </taxonset>
+ <!-- A taxonset named ingroup1. Can be used for clade constraints and/or logging. -->
+ <taxonset id="ingroup1" spec="TaxonSet">
+  <taxon idref="D_barrandei"/>
+  <taxon idref="D_globifrons"/>
+  <taxon idref="D_ellipticum"/>
+  <taxon idref="D_bainsi"/>
+  <taxon idref="D_grovesi"/>
+  <taxon idref="D_longifrons"/>
+  <taxon idref="D_fleur"/>
+  <taxon idref="O_liversidgei"/>
+  <taxon idref="S_robusta"/>
+  <taxon idref="S_dentata"/>
+  <taxon idref="S_longispina"/>
+  <taxon idref="S_cranium"/>
+  <taxon idref="S_maquoketensis"/>
+  <taxon idref="S_murphyi"/>
+  <taxon idref="S_gemina"/>
+  <taxon idref="S_goodnovi"/>
+  <taxon idref="S_exserta"/>
+  <taxon idref="H_huebneri"/>
+  <taxon idref="H_pseudohemicranium"/>
+  <taxon idref="H_elliptica"/>
+ </taxonset>
+ <!-- A taxonset named outgroup1. Can be used for clade constraints and/or logging. -->
+ <taxonset id="outgroup1" spec="TaxonSet">
+  <taxon idref="Actinopeltis_globosa"/>
+  <taxon idref="Actinopeltis_carolialexandri"/>
+ </taxonset>
+ 
+ 
+ <!-- Tipdates for all taxa. Tipdates that will vary need to be   -->
+ <!-- specified in operators, and also have a prior distribution. -->
+ <!-- Number of fossils: you have 21 tips with ages > 0 Ma -->
+ <trait id="tipDates" spec="beast.evolution.tree.TraitSet" traitname="date-backward" units="year" value="Actinopeltis_globosa=36.25,
+Actinopeltis_carolialexandri=36.25,
+D_barrandei=5.60000000000002,
+D_globifrons=6.65000000000003,
+D_ellipticum=6.30000000000004,
+D_bainsi=18.1,
+D_grovesi=18.15,
+D_longifrons=5.5,
+D_fleur=10.655,
+O_liversidgei=0,
+S_robusta=29.4,
+S_dentata=31.55,
+S_longispina=30.35,
+S_cranium=39.25,
+S_maquoketensis=26.5,
+S_murphyi=31.2,
+S_gemina=29.7,
+S_goodnovi=34,
+S_exserta=30.22,
+H_huebneri=30.38,
+H_pseudohemicranium=29.41,
+H_elliptica=40.77">
+  <!-- &apos;taxa=&apos; tag specifies the beast.evolution.alignment.TaxonSet which the tipdate names refer to. -->
+  <taxa alignment="@Deiphoninae_v2simp_morph2_unordered" spec="beast.evolution.alignment.TaxonSet"/>
+ </trait>
+ 
+ 
+ <!-- A taxonset named fossil_taxa. Can be used for clade constraints and/or logging. -->
+ <taxonset id="fossil_taxa" spec="TaxonSet">
+  <taxon idref="Actinopeltis_globosa"/>
+  <taxon idref="Actinopeltis_carolialexandri"/>
+  <taxon idref="D_barrandei"/>
+  <taxon idref="D_globifrons"/>
+  <taxon idref="D_ellipticum"/>
+  <taxon idref="D_bainsi"/>
+  <taxon idref="D_grovesi"/>
+  <taxon idref="D_longifrons"/>
+  <taxon idref="D_fleur"/>
+  <taxon idref="S_robusta"/>
+  <taxon idref="S_dentata"/>
+  <taxon idref="S_longispina"/>
+  <taxon idref="S_cranium"/>
+  <taxon idref="S_maquoketensis"/>
+  <taxon idref="S_murphyi"/>
+  <taxon idref="S_gemina"/>
+  <taxon idref="S_goodnovi"/>
+  <taxon idref="S_exserta"/>
+  <taxon idref="H_huebneri"/>
+  <taxon idref="H_pseudohemicranium"/>
+  <taxon idref="H_elliptica"/>
+ </taxonset>
+ 
+ 
+ <!-- XML SECTION 3: Sequence alignments (e.g. DNA, morphology); filtered in later section to produce partitions -->
+ 
+ 
+ <!-- Results of get_numstates_per_char() on dataset: Deiphoninae_v2simp -->
+ <!-- Filename: /drives/GDrive/__GDrive_projects/2016-09-01_Adrian_Lam_Stigall/02_BEAST/Deiphoninae_v2simp/Deiphoninae_v2simp.nex-->
+ 
+ <!-- There were 0 characters missing an implied state. -->
+ <!-- They were characters numbered:  -->
+ <!-- E.g., states 013 were found, but not state 2. This character would get re-coded as 012. -->
+ <!-- (Beast complains if states are missing; this might be OK with ordered characters,  -->
+ <!--  but I have not explored it...NJM 2014-10-22)                                        -->
+ 
+ <!-- Number of characters that were all-unknown (?, dashes, etc.): 0 -->
+ <!-- They were:  -->
+ <!-- Any all-unknown characters will be cut from the Beast XML -->
+ 
+ <!-- Listing ORIGINAL data in PHYLIP format: -->
+ <!--
+22 27
+Actinopeltis_globosa          10110100100??1?110011100101
+Actinopeltis_carolialexandri  10110100100??11110111111121
+D_barrandei                   000010111100011001110001120
+D_globifrons                  000010110100001001110001110
+D_ellipticum                  01201011?110001101110011120
+D_bainsi                      010110110110010101000011100
+D_grovesi                     0120101101100??101000010100
+D_longifrons                  001010110110???????????????
+D_fleur                       000?1011??10???????????????
+O_liversidgei                 110011111101?11000001000010
+S_robusta                     101001111100111101111111010
+S_dentata                     101101111001111100111?01100
+S_longispina                  1011011100001??1?1101101120
+S_cranium                     10110111100??11101111101011
+S_maquoketensis               101001110100?1?1?111110?100
+S_murphyi                     101?0?11??011??101101111100
+S_gemina                      1011011110001??100101110120
+S_goodnovi                    101001111100110100101010100
+S_exserta                     112011110100???000001110100
+H_huebneri                    11100102100????0111?1100100
+H_pseudohemicranium           1021010210001010111?1100020
+H_elliptica                   00110102100??1?????????????
+-->
+ 
+ <!-- Listing CORRECTED data in PHYLIP format: -->
+ <!--
+22 27
+Actinopeltis_globosa          10110100100??1?110011100101
+Actinopeltis_carolialexandri  10110100100??11110111111121
+D_barrandei                   000010111100011001110001120
+D_globifrons                  000010110100001001110001110
+D_ellipticum                  01201011?110001101110011120
+D_bainsi                      010110110110010101000011100
+D_grovesi                     0120101101100??101000010100
+D_longifrons                  001010110110???????????????
+D_fleur                       000?1011??10???????????????
+O_liversidgei                 110011111101?11000001000010
+S_robusta                     101001111100111101111111010
+S_dentata                     101101111001111100111?01100
+S_longispina                  1011011100001??1?1101101120
+S_cranium                     10110111100??11101111101011
+S_maquoketensis               101001110100?1?1?111110?100
+S_murphyi                     101?0?11??011??101101111100
+S_gemina                      1011011110001??100101110120
+S_goodnovi                    101001111100110100101010100
+S_exserta                     112011110100???000001110100
+H_huebneri                    11100102100????0111?1100100
+H_pseudohemicranium           1021010210001010111?1100020
+H_elliptica                   00110102100??1?????????????
+-->
+ 
+ 
+ <!-- Character numbers in original matrix: -->
+ <!-- 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27 -->
+ 
+ <!-- Datatype for a 2-state unordered character -->
+ <!--(all 2-state characters are unordered, duh!)-->
+ <userDataType id="datatype_Deiphoninae_v2simp_morph2_unordered" spec="beast.evolution.datatype.UserDataType" states="2" codeMap="0=0, 1=1, -=0 1, ?=0 1, Z=0 1" codelength="1"/>
+ 
+ <!-- Datatype for a 3-state unordered character -->
+ <userDataType id="datatype_Deiphoninae_v2simp_morph3_unordered" spec="beast.evolution.datatype.UserDataType" states="3" codeMap="0=0, 1=1, 2=2, -=0 1 2, ?=0 1 2, Z=0 1 2" codelength="1"/>
+ 
+ <!-- morph unordered characters. Dataset: Deiphoninae_v2simp. From: /drives/GDrive/__GDrive_projects/2016-09-01_Adrian_Lam_Stigall/02_BEAST/Deiphoninae_v2simp/Deiphoninae_v2simp.nex -->
+ 
+ <!--Indices of the characters in the 27 unordered characters subset from dataset: Deiphoninae_v2simp: -->
+ <!-- 1, 2, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27 -->
+ 
+ <!-- The ascertainment-bias model for these characters has been set to &apos;Mk&apos; (Markov-k). This means *NO* correction for unobservable character patterns will be performed.
+-->
+ 
+ <data id="Deiphoninae_v2simp_morph2_unordered" dataType="user defined" ascertained="false" statecount="2" strip="false" spec="beast.evolution.alignment.AscertainedAlignment">
+  <userDataType idref="datatype_Deiphoninae_v2simp_morph2_unordered"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_Actinopeltis_globosa" taxon="Actinopeltis_globosa" totalcount="2" value="101010100ZZ1Z11001110011"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_Actinopeltis_carolialexandri" taxon="Actinopeltis_carolialexandri" totalcount="2" value="101010100ZZ1111011111111"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_D_barrandei" taxon="D_barrandei" totalcount="2" value="000101110001100111000110"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_D_globifrons" taxon="D_globifrons" totalcount="2" value="000101010000100111000110"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_D_ellipticum" taxon="D_ellipticum" totalcount="2" value="010101Z11000110111001110"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_D_bainsi" taxon="D_bainsi" totalcount="2" value="011101011001010100001110"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_D_grovesi" taxon="D_grovesi" totalcount="2" value="01010101100ZZ10100001010"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_D_longifrons" taxon="D_longifrons" totalcount="2" value="0001010110ZZZZZZZZZZZZZZ"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_D_fleur" taxon="D_fleur" totalcount="2" value="00Z101ZZ10ZZZZZZZZZZZZZZ"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_O_liversidgei" taxon="O_liversidgei" totalcount="2" value="1101111101Z1100000100000"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_S_robusta" taxon="S_robusta" totalcount="2" value="100011110011110111111100"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_S_dentata" taxon="S_dentata" totalcount="2" value="1010111001111100111Z0110"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_S_longispina" taxon="S_longispina" totalcount="2" value="10101100001ZZ1Z110110110"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_S_cranium" taxon="S_cranium" totalcount="2" value="101011100ZZ1110111110101"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_S_maquoketensis" taxon="S_maquoketensis" totalcount="2" value="1000110100Z1Z1Z111110Z10"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_S_murphyi" taxon="S_murphyi" totalcount="2" value="10Z0Z1ZZ011ZZ10110111110"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_S_gemina" taxon="S_gemina" totalcount="2" value="10101110001ZZ10010111010"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_S_goodnovi" taxon="S_goodnovi" totalcount="2" value="100011110011010010101010"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_S_exserta" taxon="S_exserta" totalcount="2" value="1101110100ZZZ00000111010"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_H_huebneri" taxon="H_huebneri" totalcount="2" value="110010100ZZZZ0111Z110010"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_H_pseudohemicranium" taxon="H_pseudohemicranium" totalcount="2" value="10101010001010111Z110000"/>
+  <sequence id="seq2_unordered_from_Deiphoninae_v2simp_for_H_elliptica" taxon="H_elliptica" totalcount="2" value="001010100ZZ1ZZZZZZZZZZZZ"/>
+ </data>
+ 
+ <!--Indices of the characters in the 27 unordered characters subset from dataset: Deiphoninae_v2simp: -->
+ <!-- 3, 8, 26 -->
+ 
+ <!-- The ascertainment-bias model for these characters has been set to &apos;Mk&apos; (Markov-k). This means *NO* correction for unobservable character patterns will be performed.
+-->
+ 
+ <data id="Deiphoninae_v2simp_morph3_unordered" dataType="user defined" ascertained="false" statecount="3" strip="false" spec="beast.evolution.alignment.AscertainedAlignment">
+  <userDataType idref="datatype_Deiphoninae_v2simp_morph3_unordered"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_Actinopeltis_globosa" taxon="Actinopeltis_globosa" totalcount="3" value="100"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_Actinopeltis_carolialexandri" taxon="Actinopeltis_carolialexandri" totalcount="3" value="102"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_D_barrandei" taxon="D_barrandei" totalcount="3" value="012"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_D_globifrons" taxon="D_globifrons" totalcount="3" value="011"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_D_ellipticum" taxon="D_ellipticum" totalcount="3" value="212"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_D_bainsi" taxon="D_bainsi" totalcount="3" value="010"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_D_grovesi" taxon="D_grovesi" totalcount="3" value="210"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_D_longifrons" taxon="D_longifrons" totalcount="3" value="11Z"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_D_fleur" taxon="D_fleur" totalcount="3" value="01Z"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_O_liversidgei" taxon="O_liversidgei" totalcount="3" value="011"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_S_robusta" taxon="S_robusta" totalcount="3" value="111"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_S_dentata" taxon="S_dentata" totalcount="3" value="110"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_S_longispina" taxon="S_longispina" totalcount="3" value="112"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_S_cranium" taxon="S_cranium" totalcount="3" value="111"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_S_maquoketensis" taxon="S_maquoketensis" totalcount="3" value="110"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_S_murphyi" taxon="S_murphyi" totalcount="3" value="110"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_S_gemina" taxon="S_gemina" totalcount="3" value="112"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_S_goodnovi" taxon="S_goodnovi" totalcount="3" value="110"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_S_exserta" taxon="S_exserta" totalcount="3" value="210"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_H_huebneri" taxon="H_huebneri" totalcount="3" value="120"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_H_pseudohemicranium" taxon="H_pseudohemicranium" totalcount="3" value="222"/>
+  <sequence id="seq3_unordered_from_Deiphoninae_v2simp_for_H_elliptica" taxon="H_elliptica" totalcount="3" value="12Z"/>
+ </data>
+ 
+ 
+ <!-- XML SECTION 4: Partitions (filters applied to the sequence alignments produce partitions) -->
+ <!--                The tree+model confer likelihood on each partition.                        -->
+ 
+ 
+ 
+ <!-- XML SECTION 5: Miscellaneous                                         -->
+ <!--                (space for various extra parameters etc.)             -->
+ 
+ 
+ <!-- This is an exponential distribution used as the prior on each gamma shape parameter -->
+ <Exponential id="exponential_distrib_for_gammaShape_priors" name="distr">
+  <parameter id="exponential_mean_of_1" lower="0.0" upper="0.0" name="mean">1</parameter>
+ </Exponential>
+ 
+ 
+ <!-- XML SECTION 6: Site Models (sequence/morphology evolution models for each partition) -->
+ 
+ 
+ 
+ <!-- CUSTOM MORPHOLOGY RATE MATRICES FOR DISCRETE MORPHOLOGICAL CHARACTER EVOLUTION -->
+ 
+ 
+ <!-- rates for a 2x2, unordered character matrix; 2 off-diagonal rates -->
+ <parameter id="Deiphoninae_v2simp_morph2_unordered_ratematrix" dimension="2" name="rates">1.0 1.0</parameter>
+ 
+ <!-- rates for a 3x3, unordered character matrix; 6 off-diagonal rates -->
+ <parameter id="Deiphoninae_v2simp_morph3_unordered_ratematrix" dimension="6" name="rates">1.0 1.0 1.0 1.0 1.0 1.0</parameter>
+ 
+ 
+ <!-- CUSTOM MORPHOLOGY SUBSTITUTION MODELS FOR DISCRETE MORPHOLOGICAL CHARACTER EVOLUTION -->
+ 
+ 
+ <!-- substitution model for a 2x2, unordered character matrix; 2 off-diagonal rates -->
+ <substModel id="Deiphoninae_v2simp_morph2_unordered_substModel" rates="@Deiphoninae_v2simp_morph2_unordered_ratematrix" spec="GeneralSubstitutionModel">
+  <frequencies id="Deiphoninae_v2simp_morph2_unordered_basefreqs" frequencies="0.5 0.5" spec="Frequencies"/>
+ </substModel>
+ 
+ <!-- substitution model for a 3x3, unordered character matrix; 6 off-diagonal rates -->
+ <substModel id="Deiphoninae_v2simp_morph3_unordered_substModel" rates="@Deiphoninae_v2simp_morph3_unordered_ratematrix" spec="GeneralSubstitutionModel">
+  <frequencies id="Deiphoninae_v2simp_morph3_unordered_basefreqs" frequencies="0.333333333333333 0.333333333333333 0.333333333333333" spec="Frequencies"/>
+ </substModel>
+ 
+ 
+ <!-- CUSTOM MORPHOLOGY SITE MODELS FOR DISCRETE MORPHOLOGICAL CHARACTER EVOLUTION -->
+ 
+ 
+ <!-- siteModel for a 2x2, unordered character matrix; 2 off-diagonal rates; -->
+ <!-- gamma-distributed among-site rate variation with 4 categories, no invariant sites -->
+ <siteModel id="Deiphoninae_v2simp_morph2_unordered_sitemodel" gammaCategoryCount="4" spec="SiteModel">
+  <parameter idref="morph_relRate" name="mutationRate"/>
+  <parameter idref="morph_gammaShape" name="shape"/>
+  <parameter id="Deiphoninae_v2simp_morph2_unordered_pInv" lower="0.0" upper="1.0" name="proportionInvariant">0</parameter>
+  <substModel idref="Deiphoninae_v2simp_morph2_unordered_substModel"/>
+ </siteModel>
+ 
+ <!-- siteModel for a 3x3, unordered character matrix; 6 off-diagonal rates; -->
+ <!-- gamma-distributed among-site rate variation with 4 categories, no invariant sites -->
+ <siteModel id="Deiphoninae_v2simp_morph3_unordered_sitemodel" gammaCategoryCount="4" spec="SiteModel">
+  <parameter idref="morph_relRate" name="mutationRate"/>
+  <parameter idref="morph_gammaShape" name="shape"/>
+  <parameter id="Deiphoninae_v2simp_morph3_unordered_pInv" lower="0.0" upper="1.0" name="proportionInvariant">0</parameter>
+  <substModel idref="Deiphoninae_v2simp_morph3_unordered_substModel"/>
+ </siteModel>
+ 
+ 
+ <!-- Likelihood of morphology data given tree, model, morphology model parameters -->
+ 
+ <!-- Likelihood of Deiphoninae_v2simp_morph2_unordered on the tree -->
+ <distribution id="Deiphoninae_v2simp_morph2_unordered_treeLikelihood" spec="TreeLikelihood" data="@Deiphoninae_v2simp_morph2_unordered" tree="@shared_tree" siteModel="@Deiphoninae_v2simp_morph2_unordered_sitemodel" branchRateModel="@shared_clock" useAmbiguities="true"/>
+ 
+ <!-- Likelihood of Deiphoninae_v2simp_morph3_unordered on the tree -->
+ <distribution id="Deiphoninae_v2simp_morph3_unordered_treeLikelihood" spec="TreeLikelihood" data="@Deiphoninae_v2simp_morph3_unordered" tree="@shared_tree" siteModel="@Deiphoninae_v2simp_morph3_unordered_sitemodel" branchRateModel="@shared_clock" useAmbiguities="true"/>
+ 
+ 
+ <!-- XML SECTION 7: Shared clock model (strict, relaxed, etc.) -->
+ 
+ 
+ 
+ <!-- Shared clock model, named: shared_clock -->
+ 
+ <!-- strict: Strict clock with single branch rate -->
+ <branchRateModel id="shared_clock" clock.rate="@strictMean_of_shared_clock" spec="beast.evolution.branchratemodel.StrictClockModel"/>
+ 
+ 
+ <!-- XML SECTION 9: Shared tree model (Yule, Birth-Death (BD), Birth-Death Skyline (BDSKY), etc.) -->
+ 
+ 
+ <!-- Set up the BDSKY tree model: BirthDeathSkylineModel -->
+ <!-- (Other models, e.g. Yule (pure-birth), BD (birth-death), BDSS (BD, constant serial sampling) are special cases of BDSKY) -->
+ <!-- (Except the Birth-Death-Skyline-Sampled-Ancestor model) -->
+ <BirthDeathSkylineModel id="@shared_tree" tree="@shared_tree" contemp="false" spec="beast.evolution.speciation.BirthDeathSkylineModel">
+  
+  <!-- Starting parameters of the BirthDeathSkylineModel for the observed tree -->
+  
+  <!-- originTime: the start of the sampling+tree growth process -->
+  <!-- (This is a nuisance parameter, but its starting value must be older than the start tree root or Beast2 will crash) -->
+  <parameter id="originTime" lower="0.0" upper="4600" name="origin">100</parameter>
+  
+  <!-- birthRates (lambda: speciation or lineage splitting rates, oldest to youngest) -->
+  <parameter id="birthRate" name="birthRate" lower="0" upper="9" value="0.02"/>
+  <parameter id="birthRateChangeTimes_tops" name="birthRateChangeTimes" value="0"/>
+  
+  <!-- deathRates (mu: lineage extinction rates, oldest to youngest) -->
+  <parameter id="deathRate" name="deathRate" lower="0" upper="1" value="0.002"/>
+  <parameter id="deathRateChangeTimes_tops" name="deathRateChangeTimes" value="0"/>
+  
+  <!-- samplingRates (psi: rate of sampling per lineage per my)                  -->
+  <!-- sorted from youngest to oldest, but with zero at the end,                 -->
+  <!-- as specified by Denise on the beast-users group:                          -->
+  <!-- https://groups.google.com/d/msg/beast-users/UyAS0sYDkKk/PB0ktWnssn0J          -->
+  <!-- The actual psi samplingRates, though, are in order from oldest to youngest -->
+  <parameter id="samplingRate" name="samplingRate" lower="0" upper="9" value="0.002"/>
+  <parameter id="samplingRateChangeTimes_tops" name="samplingRateChangeTimes" value="0"/>
+  
+  <!-- rho (probability of sampling each lineage extant at a particular timepoint, typically the present, 0 Ma) -->
+  <parameter id="rho" name="rho" lower="0.0" value="1"/>
+  <parameter id="rhoSamplingTimes" name="rhoSamplingTimes" value="0"/>
+  
+  <!-- Are time arrays reversed, for birth, death, psi, rho, and R. Regardless, the parameter values are listed from oldest to youngest time bin. -->
+  <reverseTimeArrays id="reverseTimeArrays" spec="beast.core.parameter.BooleanParameter" value="true true true true true"/>
+ </BirthDeathSkylineModel>
+ 
+ 
+ <!-- Defining and logging the MCMC search chain -->
+ <run id="mcmc" chainLength="100000000" spec="MCMC">
+  
+  <state id="state" storeEvery="50000">
+   
+   
+   <!-- XML SECTION 10: MCMC states: the state of the MCMC chain saved at various timepoints -->
+   <!--                 (as a .state file, to allow the chain to be re-started later on)          -->
+   
+   
+   <!-- Shared clock model, named: shared_clock -->
+   
+   <!-- strict: Strict clock with single branch rate -->
+   <parameter id="strictMean_of_shared_clock" lower="0" upper="10" name="stateNode">0.01</parameter>
+   
+   <!-- Starting states for morphology model parameters -->
+   <parameter id="morph_relRate" name="stateNode">1</parameter>
+   <parameter id="morph_gammaShape" name="stateNode">1</parameter>
+   
+   <!-- State of the tree & tree model parameters during MCMC search -->
+   <stateNode idref="shared_tree"/>
+   <stateNode idref="originTime"/>
+   <stateNode idref="birthRate"/>
+   <stateNode idref="deathRate"/>
+   <stateNode idref="samplingRate"/>
+   <stateNode idref="birthRateChangeTimes_tops"/>
+   <stateNode idref="deathRateChangeTimes_tops"/>
+   <stateNode idref="samplingRateChangeTimes_tops"/>
+   <stateNode idref="rho"/>
+   <stateNode idref="rhoSamplingTimes"/>
+   <stateNode idref="reverseTimeArrays"/>
+   
+   <!-- Epidemiology version of a tree model -->
+   <!--<parameter dimension="10" id="samplingProportionS.t:shared_tree" lower="0.0" name="stateNode" upper="1.0">0.01</parameter>
+        <parameter dimension="10" id="becomeUninfectiousRateS.t:shared_tree" lower="0.0" name="stateNode" upper="10.0">1.0</parameter>
+        <parameter dimension="10" id="R0S.t:shared_tree" lower="0.0" name="stateNode" upper="10.0">2.0</parameter>-->
+   
+   <!-- RRB (Remco) suggested: add initialiser -->
+   <!-- Starting tree is constructed using UPGMA method (actually neighborjoining2) -->
+   <!--<stateNode id="shared_tree" initial="NULL" spec="beast.util.ClusterZBSATree" nodetype="beast.evolution.tree.ZeroBranchSANode" clusterType="neighborjoining2" taxa="@Deiphoninae_v2simp_morph2_unordered" trait="@tipDates"/>-->
+   
+   <!-- RRB (Remco) suggested: add initialiser -->
+   <!-- Starting tree is constructed using random coalescence -->
+   <stateNode id="shared_tree" initial="NULL" estimate="true" spec="beast.evolution.tree.RandomTree" taxa="@Deiphoninae_v2simp_morph2_unordered" trait="@tipDates">
+    <populationModel id="ConstantPopulation_shared_tree" spec="ConstantPopulation">
+     <parameter id="randomPopSize_shared_tree" name="popSize">1</parameter>
+    </populationModel>
+   </stateNode>
+  </state>
+  
+  
+  <!-- XML SECTION 8: Starting tree (random, user-fixed, etc.) -->
+  
+  
+  
+  
+  <!-- XML SECTION 11: MCMC states: initializers, with &apos;init&apos; tags -->
+  <!--                          -->
+  
+  
+  <distribution id="posterior" spec="util.CompoundDistribution">
+   <distribution id="prior" spec="util.CompoundDistribution">
+    
+    
+    <!-- XML SECTION 12: Priors -->
+    
+    
+    <!-- Priors on node dates and/or clade monophyly -->
+    <!-- (some might be unconstrained, just for logging purposes) -->
+    
+    <!-- Prior distribution on the date of taxon: total_group_LCA (not constrained to be monophyletic) -->
+    <distribution id="total_group_LCA_prior" monophyletic="false" spec="beast.math.distributions.MRCAPrior" tree="@shared_tree" useOriginate="false" tipsonly="false">
+     <taxonset idref="total_group_LCA"/>
+     <Normal id="total_group_LCA_prior_Normal" name="distr">
+      <parameter id="total_group_LCA_param_Normal_mean" name="mean" estimate="false">45</parameter>
+      <parameter id="total_group_LCA_param_Normal_stdev" name="sigma" estimate="false">0.1</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- Prior distribution on the date of taxon: ingroup1 (not constrained to be monophyletic) -->
+    <distribution id="ingroup1_prior" monophyletic="false" spec="beast.math.distributions.MRCAPrior" tree="@shared_tree" useOriginate="false" tipsonly="false">
+     <taxonset idref="ingroup1"/>
+     <Normal id="ingroup1_prior_Normal" name="distr">
+      <parameter id="ingroup1_param_Normal_mean" name="mean" estimate="false">30</parameter>
+      <parameter id="ingroup1_param_Normal_stdev" name="sigma" estimate="false">0.1</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- Prior distribution on the date of taxon: outgroup1 (not constrained to be monophyletic) -->
+    <distribution id="outgroup1_prior" monophyletic="false" spec="beast.math.distributions.MRCAPrior" tree="@shared_tree" useOriginate="false" tipsonly="false">
+     <taxonset idref="outgroup1"/>
+     <Normal id="outgroup1_prior_Normal" name="distr">
+      <parameter id="outgroup1_param_Normal_mean" name="mean" estimate="false">30</parameter>
+      <parameter id="outgroup1_param_Normal_stdev" name="sigma" estimate="false">0.1</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;Actinopeltis_globosa&apos; prior is a normal with mean=36.25, sd=0.03625. -->
+    <distribution id="prP_UniformDistrib_Actinopeltis_globosa" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_Actinopeltis_globosa" spec="TaxonSet">
+      <taxon idref="Actinopeltis_globosa" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_Actinopeltis_globosa" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_Actinopeltis_globosa" name="mean" estimate="false">36.25</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_Actinopeltis_globosa" name="sigma" estimate="false">0.03625</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;Actinopeltis_carolialexandri&apos; prior is a normal with mean=36.25, sd=0.03625. -->
+    <distribution id="prP_UniformDistrib_Actinopeltis_carolialexandri" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_Actinopeltis_carolialexandri" spec="TaxonSet">
+      <taxon idref="Actinopeltis_carolialexandri" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_Actinopeltis_carolialexandri" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_Actinopeltis_carolialexandri" name="mean" estimate="false">36.25</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_Actinopeltis_carolialexandri" name="sigma" estimate="false">0.03625</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;D_barrandei&apos; prior is a normal with mean=5.60000000000002, sd=0.00560000000000002. -->
+    <distribution id="prP_UniformDistrib_D_barrandei" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_D_barrandei" spec="TaxonSet">
+      <taxon idref="D_barrandei" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_D_barrandei" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_D_barrandei" name="mean" estimate="false">5.60000000000002</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_D_barrandei" name="sigma" estimate="false">0.00560000000000002</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;D_globifrons&apos; prior is a normal with mean=6.65000000000003, sd=0.00665000000000003. -->
+    <distribution id="prP_UniformDistrib_D_globifrons" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_D_globifrons" spec="TaxonSet">
+      <taxon idref="D_globifrons" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_D_globifrons" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_D_globifrons" name="mean" estimate="false">6.65000000000003</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_D_globifrons" name="sigma" estimate="false">0.00665000000000003</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;D_ellipticum&apos; prior is a normal with mean=6.30000000000004, sd=0.00630000000000004. -->
+    <distribution id="prP_UniformDistrib_D_ellipticum" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_D_ellipticum" spec="TaxonSet">
+      <taxon idref="D_ellipticum" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_D_ellipticum" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_D_ellipticum" name="mean" estimate="false">6.30000000000004</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_D_ellipticum" name="sigma" estimate="false">0.00630000000000004</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;D_bainsi&apos; prior is a normal with mean=18.1, sd=0.0181. -->
+    <distribution id="prP_UniformDistrib_D_bainsi" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_D_bainsi" spec="TaxonSet">
+      <taxon idref="D_bainsi" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_D_bainsi" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_D_bainsi" name="mean" estimate="false">18.1</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_D_bainsi" name="sigma" estimate="false">0.0181</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;D_grovesi&apos; prior is a normal with mean=18.15, sd=0.01815. -->
+    <distribution id="prP_UniformDistrib_D_grovesi" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_D_grovesi" spec="TaxonSet">
+      <taxon idref="D_grovesi" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_D_grovesi" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_D_grovesi" name="mean" estimate="false">18.15</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_D_grovesi" name="sigma" estimate="false">0.01815</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;D_longifrons&apos; prior is a normal with mean=5.5, sd=0.0055. -->
+    <distribution id="prP_UniformDistrib_D_longifrons" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_D_longifrons" spec="TaxonSet">
+      <taxon idref="D_longifrons" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_D_longifrons" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_D_longifrons" name="mean" estimate="false">5.5</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_D_longifrons" name="sigma" estimate="false">0.0055</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;D_fleur&apos; prior is a normal with mean=10.655, sd=0.010655. -->
+    <distribution id="prP_UniformDistrib_D_fleur" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_D_fleur" spec="TaxonSet">
+      <taxon idref="D_fleur" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_D_fleur" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_D_fleur" name="mean" estimate="false">10.655</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_D_fleur" name="sigma" estimate="false">0.010655</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;S_robusta&apos; prior is a normal with mean=29.4, sd=0.0294. -->
+    <distribution id="prP_UniformDistrib_S_robusta" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_S_robusta" spec="TaxonSet">
+      <taxon idref="S_robusta" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_S_robusta" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_S_robusta" name="mean" estimate="false">29.4</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_S_robusta" name="sigma" estimate="false">0.0294</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;S_dentata&apos; prior is a normal with mean=31.55, sd=0.03155. -->
+    <distribution id="prP_UniformDistrib_S_dentata" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_S_dentata" spec="TaxonSet">
+      <taxon idref="S_dentata" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_S_dentata" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_S_dentata" name="mean" estimate="false">31.55</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_S_dentata" name="sigma" estimate="false">0.03155</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;S_longispina&apos; prior is a normal with mean=30.35, sd=0.03035. -->
+    <distribution id="prP_UniformDistrib_S_longispina" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_S_longispina" spec="TaxonSet">
+      <taxon idref="S_longispina" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_S_longispina" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_S_longispina" name="mean" estimate="false">30.35</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_S_longispina" name="sigma" estimate="false">0.03035</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;S_cranium&apos; prior is a normal with mean=39.25, sd=0.03925. -->
+    <distribution id="prP_UniformDistrib_S_cranium" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_S_cranium" spec="TaxonSet">
+      <taxon idref="S_cranium" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_S_cranium" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_S_cranium" name="mean" estimate="false">39.25</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_S_cranium" name="sigma" estimate="false">0.03925</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;S_maquoketensis&apos; prior is a normal with mean=26.5, sd=0.0265. -->
+    <distribution id="prP_UniformDistrib_S_maquoketensis" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_S_maquoketensis" spec="TaxonSet">
+      <taxon idref="S_maquoketensis" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_S_maquoketensis" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_S_maquoketensis" name="mean" estimate="false">26.5</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_S_maquoketensis" name="sigma" estimate="false">0.0265</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;S_murphyi&apos; prior is a normal with mean=31.2, sd=0.0312. -->
+    <distribution id="prP_UniformDistrib_S_murphyi" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_S_murphyi" spec="TaxonSet">
+      <taxon idref="S_murphyi" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_S_murphyi" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_S_murphyi" name="mean" estimate="false">31.2</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_S_murphyi" name="sigma" estimate="false">0.0312</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;S_gemina&apos; prior is a normal with mean=29.7, sd=0.0297. -->
+    <distribution id="prP_UniformDistrib_S_gemina" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_S_gemina" spec="TaxonSet">
+      <taxon idref="S_gemina" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_S_gemina" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_S_gemina" name="mean" estimate="false">29.7</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_S_gemina" name="sigma" estimate="false">0.0297</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;S_goodnovi&apos; prior is a normal with mean=34, sd=0.034. -->
+    <distribution id="prP_UniformDistrib_S_goodnovi" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_S_goodnovi" spec="TaxonSet">
+      <taxon idref="S_goodnovi" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_S_goodnovi" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_S_goodnovi" name="mean" estimate="false">34</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_S_goodnovi" name="sigma" estimate="false">0.034</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;S_exserta&apos; prior is a normal with mean=30.22, sd=0.03022. -->
+    <distribution id="prP_UniformDistrib_S_exserta" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_S_exserta" spec="TaxonSet">
+      <taxon idref="S_exserta" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_S_exserta" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_S_exserta" name="mean" estimate="false">30.22</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_S_exserta" name="sigma" estimate="false">0.03022</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;H_huebneri&apos; prior is a normal with mean=30.38, sd=0.03038. -->
+    <distribution id="prP_UniformDistrib_H_huebneri" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_H_huebneri" spec="TaxonSet">
+      <taxon idref="H_huebneri" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_H_huebneri" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_H_huebneri" name="mean" estimate="false">30.38</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_H_huebneri" name="sigma" estimate="false">0.03038</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;H_pseudohemicranium&apos; prior is a normal with mean=29.41, sd=0.02941. -->
+    <distribution id="prP_UniformDistrib_H_pseudohemicranium" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_H_pseudohemicranium" spec="TaxonSet">
+      <taxon idref="H_pseudohemicranium" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_H_pseudohemicranium" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_H_pseudohemicranium" name="mean" estimate="false">29.41</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_H_pseudohemicranium" name="sigma" estimate="false">0.02941</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- As convert_to_normal==yes, for getting a starting tree, the &apos;H_elliptica&apos; prior is a normal with mean=40.77, sd=0.04077. -->
+    <distribution id="prP_UniformDistrib_H_elliptica" tipsonly="true" monophyletic="false" tree="@shared_tree" spec="beast.math.distributions.MRCAPrior">
+     <taxonset id="age_of_H_elliptica" spec="TaxonSet">
+      <taxon idref="H_elliptica" spec="Taxon"/>
+     </taxonset>
+     <Normal id="convertedForStartingTree_NormalDistrib_H_elliptica" name="distr" offset="0">
+      <parameter id="convertedForStartingTree_mean_of_NormalDistrib_H_elliptica" name="mean" estimate="false">40.77</parameter>
+      <parameter id="convertedForStartingTree_sd_of_NormalDistrib_H_elliptica" name="sigma" estimate="false">0.04077</parameter>
+     </Normal>
+    </distribution>
+    
+    <!-- Prior probability density of the mean of &apos;shared_clock&apos;, according to a uniform distribution with lower=0, upper=10. -->
+    <prior id="prP_UniformDistrib_on_mean_of_shared_clock" name="distribution" x="@strictMean_of_shared_clock">
+     <Uniform id="UniformDistrib_on_mean_of_shared_clock" name="distr" offset="0" lower="0" upper="10"/>
+    </prior>
+    
+    <!-- Prior probability density on the value of the parameter &apos;strictMean_of_shared_clock&apos;, according to a uniform distribution with lower=0, upper=10. -->
+    <prior id="prP_UniformDistrib_on_param_strictMean_of_shared_clock" name="distribution" x="@strictMean_of_shared_clock">
+     <Uniform id="UniformDistrib_on_param_strictMean_of_shared_clock" name="distr" offset="0" lower="0" upper="10"/>
+    </prior>
+    
+    <!-- Prior on parameter(s) for morphology evolution model -->
+    
+    <!-- Prior density of the gamma shape parameter for morphology -->
+    <prior id="morph_gammaShape_prior" distr="@exponential_distrib_for_gammaShape_priors" name="distribution" x="@morph_gammaShape"/>
+    
+    <!-- Prior probability distributions of tree model parameters -->
+    
+    <!-- Uniform prior on the time of origin of the process (assumes my) -->
+    <!-- x means whatever parameter you are assessing via the distribution -->
+    <prior id="prior_originTime" name="distribution" x="@originTime">
+     <Uniform id="prior_originTime_Uniform_distrib" lower="0.0" upper="4600.0" name="distr"/>
+    </prior>
+    
+    <!-- Priors on birthRate(s) -->
+    
+    <!-- Prior probability density on the value of the parameter &apos;birthRate&apos;, according to a uniform distribution with lower=0, upper=9. -->
+    <prior id="prP_UniformDistrib_on_param_birthRate" name="distribution" x="@birthRate">
+     <Uniform id="UniformDistrib_on_param_birthRate" name="distr" offset="0" lower="0" upper="9"/>
+    </prior>
+    
+    <!-- Priors on deathRate(s) -->
+    
+    <!-- Prior probability density on the value of the parameter &apos;deathRate&apos;, according to a uniform distribution with lower=0, upper=9. -->
+    <prior id="prP_UniformDistrib_on_param_deathRate" name="distribution" x="@deathRate">
+     <Uniform id="UniformDistrib_on_param_deathRate" name="distr" offset="0" lower="0" upper="9"/>
+    </prior>
+    
+    <!-- Prior on samplingRate(s) -->
+    
+    <!-- Prior probability density on the value of the parameter &apos;samplingRate&apos;, according to a uniform distribution with lower=0, upper=9. -->
+    <prior id="prP_UniformDistrib_on_param_samplingRate" name="distribution" x="@samplingRate">
+     <Uniform id="UniformDistrib_on_param_samplingRate" name="distr" offset="0" lower="0" upper="9"/>
+    </prior>
+    
+    <!-- Also: we are assuming for now that rho at time 0 is fixed -->
+    
+    <!-- Probability of MCMC sampled tree given treeModel parameters -->
+    <distribution id="BDSKY_prior_shared_tree" spec="beast.evolution.speciation.BirthDeathSkylineModel" tree="@shared_tree" origin="@originTime" birthRate="@birthRate" birthRateChangeTimes="@birthRateChangeTimes_tops" deathRate="@deathRate" deathRateChangeTimes="@deathRateChangeTimes_tops" samplingRate="@samplingRate" samplingRateChangeTimes="@samplingRateChangeTimes_tops" rho="@rho" rhoSamplingTimes="@rhoSamplingTimes" reverseTimeArrays="@reverseTimeArrays"/>
+   </distribution>
+   <distribution id="likelihood" spec="util.CompoundDistribution">
+    
+    
+    <!-- XML SECTION 13: Likelihoods -->
+    
+    
+    <!-- idrefs for additional likelihoods -->
+    
+    <!-- Likelihood of morphology data given tree, model, morphology model parameters -->
+    
+    <!-- Likelihood of Deiphoninae_v2simp_morph2_unordered on the tree -->
+    <distribution idref="Deiphoninae_v2simp_morph2_unordered_treeLikelihood"/>
+    
+    <!-- Likelihood of Deiphoninae_v2simp_morph3_unordered on the tree -->
+    <distribution idref="Deiphoninae_v2simp_morph3_unordered_treeLikelihood"/>
+   </distribution>
+  </distribution>
+  
+  
+  
+  <!-- Operators to change the dates of the (individual) fossil tipdates -->
+  
+  
+  <!-- XML SECTION 14: Operators. These specify how the parameter values can change at MCMC time-steps. -->
+  
+  <!-- Additional operators -->
+  <operator id="TipDatesRandomWalker_Actinopeltis_globosa" windowSize="17.45" taxonset="@age_of_Actinopeltis_globosa" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_Actinopeltis_carolialexandri" windowSize="17.45" taxonset="@age_of_Actinopeltis_carolialexandri" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_D_barrandei" windowSize="3.10000000000002" taxonset="@age_of_D_barrandei" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_D_globifrons" windowSize="2.05000000000001" taxonset="@age_of_D_globifrons" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_D_ellipticum" windowSize="3.09999999999999" taxonset="@age_of_D_ellipticum" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_D_bainsi" windowSize="6.5" taxonset="@age_of_D_bainsi" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_D_grovesi" windowSize="6.55000000000001" taxonset="@age_of_D_grovesi" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_D_longifrons" windowSize="3" taxonset="@age_of_D_longifrons" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_D_fleur" windowSize="8.155" taxonset="@age_of_D_fleur" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_S_robusta" windowSize="10.9" taxonset="@age_of_S_robusta" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_S_dentata" windowSize="10.05" taxonset="@age_of_S_dentata" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_S_longispina" windowSize="2.05000000000001" taxonset="@age_of_S_longispina" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_S_cranium" windowSize="1.04999999999998" taxonset="@age_of_S_cranium" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_S_maquoketensis" windowSize="6.20000000000002" taxonset="@age_of_S_maquoketensis" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_S_murphyi" windowSize="1" taxonset="@age_of_S_murphyi" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_S_gemina" windowSize="1.40000000000001" taxonset="@age_of_S_gemina" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_S_goodnovi" windowSize="1.59999999999999" taxonset="@age_of_S_goodnovi" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_S_exserta" windowSize="3.56" taxonset="@age_of_S_exserta" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_H_huebneri" windowSize="1.89000000000001" taxonset="@age_of_H_huebneri" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_H_pseudohemicranium" windowSize="0.920000000000016" taxonset="@age_of_H_pseudohemicranium" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  <operator id="TipDatesRandomWalker_H_elliptica" windowSize="4.22" taxonset="@age_of_H_elliptica" tree="@shared_tree" weight="1.0" spec="beast.evolution.operators.TipDatesRandomWalker"/>
+  
+  
+  <!-- Operators on Strict Clock (strict) rate (mean): shared_clock -->
+  
+  <!-- Operators on the clock mean -->
+  <operator id="strictMean_of_shared_clock_scaler" parameter="@strictMean_of_shared_clock" scaleFactor="0.5" spec="ScaleOperator" weight="3.0"/>
+  <operator id="strictMean_of_shared_clock_relaxedUpDownOperator" scaleFactor="0.75" spec="UpDownOperator" weight="3.0">
+   <parameter idref="strictMean_of_shared_clock" name="up"/>
+   <tree idref="shared_tree" name="down"/>
+  </operator>
+  <operator id="ClockRateScaler_shared_clock" parameter="@strictMean_of_shared_clock" spec="ScaleOperator" weight="3.0" scaleFactor="0.5"/>
+  
+  <!-- Operator for scaling the gamma shape parameter for morphology -->
+  <operator id="morph_gammaShape_Scaler" parameter="@morph_gammaShape" scaleFactor="0.5" spec="ScaleOperator" weight="0.1"/>
+  
+  <!-- Operators on the tree model parameters -->
+  <!-- (commented out unless specified as estimated in Excel settings file) -->
+  <operator id="rateScaler_birthRate_shared_tree" parameter="@birthRate" scaleFactor="0.75" weight="10.0" spec="ScaleOperator"/>
+  <operator id="rateScaler_deathRate_shared_tree" parameter="@deathRate" scaleFactor="0.75" weight="10.0" spec="ScaleOperator"/>
+  <operator id="rateScaler_samplingRate_shared_tree" parameter="@samplingRate" scaleFactor="0.75" weight="10.0" spec="ScaleOperator"/>
+  <!-- <operator id="rateScaler_rho_shared_tree" parameter="@rho" scaleFactor="0.75" weight="10.0" spec="ScaleOperator"/> -->
+  <operator id="rateScaler_originTime_shared_tree" parameter="@originTime" scaleFactor="0.75" weight="1.0" spec="ScaleOperator"/>
+  
+  <!-- Operators on the phylogeny (topology and node dates; tip dates could be added) -->
+  <operator id="treeScaler_shared_tree" tree="@shared_tree" scaleFactor="0.5" weight="3.0" spec="ScaleOperator"/>
+  <operator id="treeRootScaler_shared_tree" tree="@shared_tree" scaleFactor="0.5" weight="3.0" spec="ScaleOperator"/>
+  <operator id="UniformOperator_shared_tree" tree="@shared_tree" weight="30.0" spec="Uniform"/>
+  <operator id="SubtreeSlide_shared_tree" tree="@shared_tree" weight="15.0" spec="SubtreeSlide"/>
+  <operator id="narrowExchange_shared_tree" tree="@shared_tree" weight="15.0" spec="Exchange"/>
+  <operator id="wideExchange_shared_tree" tree="@shared_tree" isNarrow="false" weight="3.0" spec="Exchange"/>
+  
+  <!-- Not sure what this does: NJM 2014-12-01 -->
+  <operator id="WilsonBalding_shared_tree" tree="@shared_tree" weight="3.0" spec="WilsonBalding"/>
+  
+  
+  <logger id="tracelog" fileName="traceLog2.txt" logEvery="50000" model="@posterior" sanitiseHeaders="true" sort="smart">
+   <log idref="posterior"/>
+   <log idref="prior"/>
+   <log idref="likelihood"/>
+   
+   <!-- Log the sampled (individual) tipdates and the prior probability densities (prP) of them -->
+   
+   
+   <!-- XML SECTION 15: Trace log. This logs the parameters in a .log file, which may be viewed in Tracer. -->
+   <!-- Reporting node dates/monophyly to trace log -->
+   <log idref="total_group_LCA_prior"/>
+   <log idref="ingroup1_prior"/>
+   <log idref="outgroup1_prior"/>
+   
+   <!-- Additional logs -->
+   <log idref="prP_UniformDistrib_Actinopeltis_globosa"/>
+   <log idref="prP_UniformDistrib_Actinopeltis_carolialexandri"/>
+   <log idref="prP_UniformDistrib_D_barrandei"/>
+   <log idref="prP_UniformDistrib_D_globifrons"/>
+   <log idref="prP_UniformDistrib_D_ellipticum"/>
+   <log idref="prP_UniformDistrib_D_bainsi"/>
+   <log idref="prP_UniformDistrib_D_grovesi"/>
+   <log idref="prP_UniformDistrib_D_longifrons"/>
+   <log idref="prP_UniformDistrib_D_fleur"/>
+   <log idref="prP_UniformDistrib_S_robusta"/>
+   <log idref="prP_UniformDistrib_S_dentata"/>
+   <log idref="prP_UniformDistrib_S_longispina"/>
+   <log idref="prP_UniformDistrib_S_cranium"/>
+   <log idref="prP_UniformDistrib_S_maquoketensis"/>
+   <log idref="prP_UniformDistrib_S_murphyi"/>
+   <log idref="prP_UniformDistrib_S_gemina"/>
+   <log idref="prP_UniformDistrib_S_goodnovi"/>
+   <log idref="prP_UniformDistrib_S_exserta"/>
+   <log idref="prP_UniformDistrib_H_huebneri"/>
+   <log idref="prP_UniformDistrib_H_pseudohemicranium"/>
+   <log idref="prP_UniformDistrib_H_elliptica"/>
+   
+   <!-- Trace log of the &apos;shared_clock&apos;clock model -->
+   <parameter idref="strictMean_of_shared_clock" name="log"/>
+   
+   <!-- Log of rate statistics: rate.mean, rate.variance, rate.coefficientOfVariation -->
+   <!-- coefficient of variation = stdev / mean = sqrt(variance)/mean -->
+   <log id="rate_summary_shared_clock" branchratemodel="@shared_clock" tree="@shared_tree" spec="beast.evolution.branchratemodel.RateStatistic"/>
+   
+   <!-- Log of the prior probability density of the sampled mean of this clock -->
+   <log idref="prP_UniformDistrib_on_mean_of_shared_clock"/>
+   
+   
+   <log idref="strictMean_of_shared_clock"/>
+   
+   <!-- Likelihood of morphology data given tree, model, morphology model parameters -->
+   <log idref="Deiphoninae_v2simp_morph2_unordered_treeLikelihood"/>
+   <log idref="Deiphoninae_v2simp_morph3_unordered_treeLikelihood"/>
+   
+   <!-- Log of the gamma shape parameter for morphology -->
+   <log idref="morph_gammaShape"/>
+   
+   <!-- Log of prior density of the gamma shape parameter for morphology -->
+   <log idref="morph_gammaShape_prior"/>
+   
+   <!-- Log the probability of the tree given the treeModel parameters-->
+   <log idref="BDSKY_prior_shared_tree"/>
+   
+   <!-- Log the prior probability of the treeModel parameters-->
+   <log idref="originTime"/>
+   <log idref="birthRate"/>
+   <log idref="deathRate"/>
+   <log idref="samplingRate"/>
+   <log idref="rho"/>
+   
+   <!-- Log of the value of the parameter &apos;birthRate&apos; -->
+   
+   <!-- Log of the prior probability density of value of the parameter &apos;birthRate&apos; -->
+   <log idref="prP_UniformDistrib_on_param_birthRate"/>
+   
+   <!-- Log of the value of the parameter &apos;deathRate&apos; -->
+   
+   <!-- Log of the prior probability density of value of the parameter &apos;deathRate&apos; -->
+   <log idref="prP_UniformDistrib_on_param_deathRate"/>
+   
+   <!-- Log of the value of the parameter &apos;samplingRate&apos; -->
+   
+   <!-- Log of the prior probability density of value of the parameter &apos;samplingRate&apos; -->
+   <log idref="prP_UniformDistrib_on_param_samplingRate"/>
+  </logger>
+  
+  
+  <logger id="screenlog" fileName="" logEvery="50000" sanitiseHeaders="true" sort="smart">
+   <log idref="posterior"/>
+   <log idref="prior"/>
+   <log idref="likelihood"/>
+   
+   
+   <!-- XML SECTION 16: Screen log. Which parameters print to screen, and how often? -->
+   
+   <!-- Reporting node dates/monophyly to screen log -->
+   <log idref="total_group_LCA_prior"/>
+   <log idref="ingroup1_prior"/>
+   <log idref="outgroup1_prior"/>
+   
+   <!-- Additional logs -->
+   
+   <!-- log of the clock mean for model &apos;shared_clock&apos; -->
+   <parameter idref="strictMean_of_shared_clock" name="log"/>
+   
+   <!-- Likelihood of morphology data given tree, model, morphology model parameters -->
+   <log idref="Deiphoninae_v2simp_morph2_unordered_treeLikelihood"/>
+   <log idref="Deiphoninae_v2simp_morph3_unordered_treeLikelihood"/>
+   
+   <!-- Log the probability of the tree given the treeModel parameters-->
+   <log idref="BDSKY_prior_shared_tree"/>
+   
+   <!-- Log the prior probability of the treeModel parameters-->
+   <log idref="originTime"/>
+   <log idref="birthRate"/>
+   <log idref="deathRate"/>
+   <log idref="samplingRate"/>
+   <log idref="rho"/>
+  </logger>
+  
+  
+  <logger id="treelog" fileName="treeLog2.txt" logEvery="50000" mode="tree">
+   
+   
+   <!-- XML SECTION 17: Tree log. How often should time trees from the MCMC chain be saved, and what data should they have? -->
+   <!--       (these are trees where the branch lengths are in time units, e.g. millions of years )                    -->
+   <!--   NOTE: this file can get HUGE if you sample too frequently. You just want a few thousand samples at the end.       -->
+   
+   <!-- Log the tree and branch rates -->
+   <log id="TreeWithMetaDataLogger_shared_tree" tree="@shared_tree" branchratemodel="@shared_clock" substitutions="false" spec="beast.evolution.tree.TreeWithMetaDataLogger"/>
+  </logger>
+  
+  
+  <logger id="subslog" fileName="subsLog2.txt" logEvery="50000" mode="tree">
+   
+   
+   <!-- XML SECTION 18: Substitutions Tree log. How often should these trees be saved, and what data should they have?      -->
+   <!--         (these are trees where the branch lengths are the expected number of substitutions, i.e. rate * time)      -->
+   <!--   NOTE: this file can get HUGE if you sample too frequently. You just want a few thousand samples at the end.      -->
+   
+   <!-- Log the tree and branch rates -->
+   <log id="Subs_TreeWithMetaDataLogger_shared_tree" tree="@shared_tree" substitutions="true" spec="beast.evolution.tree.TreeWithMetaDataLogger"/>
+  </logger>
+  
+  
+  
+  
+ </run>
+</beast>

@@ -1,0 +1,115 @@
+
+                        BEAST v2.4.2, 2002-2016
+             Bayesian Evolutionary Analysis Sampling Trees
+                       Designed and developed by
+ Remco Bouckaert, Alexei J. Drummond, Andrew Rambaut & Marc A. Suchard
+                                    
+                     Department of Computer Science
+                         University of Auckland
+                        remco@cs.auckland.ac.nz
+                        alexei@cs.auckland.ac.nz
+                                    
+                   Institute of Evolutionary Biology
+                        University of Edinburgh
+                           a.rambaut@ed.ac.uk
+                                    
+                    David Geffen School of Medicine
+                 University of California, Los Angeles
+                           msuchard@ucla.edu
+                                    
+                      Downloads, Help & Resources:
+                           http://beast2.org/
+                                    
+  Source code distributed under the GNU Lesser General Public License:
+                   http://github.com/CompEvol/beast2
+                                    
+                           BEAST developers:
+   Alex Alekseyenko, Trevor Bedford, Erik Bloomquist, Joseph Heled, 
+ Sebastian Hoehna, Denise Kuehnert, Philippe Lemey, Wai Lok Sibon Li, 
+Gerton Lunter, Sidney Markowitz, Vladimir Minin, Michael Defoin Platel, 
+                 Oliver Pybus, Chieh-Hsi Wu, Walter Xie
+                                    
+                               Thanks to:
+          Roald Forsberg, Beth Shapiro and Korbinian Strimmer
+
+Random number seed: 754321
+
+Neseuretus: 26 2
+T_delphinocephalus: 26 2
+P_dyaulax: 26 2
+P_exul: 26 2
+P_dentata: 26 2
+P_christyi: 26 2
+P_vulcani: 26 2
+B_bisulcata: 26 2
+B_trentonensis: 26 2
+C_arago: 26 2
+P_vacuvertis: 26 2
+P_oehlerti: 26 2
+C_rouaulti: 26 2
+C_boisselli: 26 2
+C_alcantarae: 26 2
+E_sdzuyi: 26 2
+AscertainedAlignment(Homalonotidae_v2simp_morph2_unordered)
+  16 taxa
+  26 sites with weight 24
+  26 patterns
+
+Neseuretus = 32.4 (32.4)
+T_delphinocephalus = 0 (0.0)
+P_dyaulax = 17.705 (17.705)
+P_exul = 33.54 (33.54)
+P_dentata = 28.945 (28.945)
+P_christyi = 23.75 (23.75)
+P_vulcani = 31.945 (31.945)
+B_bisulcata = 28.315 (28.315)
+B_trentonensis = 28.155 (28.155)
+C_arago = 33.51 (33.51)
+P_vacuvertis = 33.505 (33.505)
+P_oehlerti = 33.545 (33.545)
+C_rouaulti = 33.23 (33.23)
+C_boisselli = 22.58 (22.58)
+C_alcantarae = 25.065 (25.065)
+E_sdzuyi = 28.185 (28.185)
+TreeLikelihood(Homalonotidae_v2simp_morph2_unordered_treeLikelihood) uses BeerLikelihoodCore
+  AscertainedAlignment(Homalonotidae_v2simp_morph2_unordered): [taxa, patterns, sites] = [16, 26, 24]
+Neseuretus: 5 3
+T_delphinocephalus: 5 3
+P_dyaulax: 5 3
+P_exul: 5 3
+P_dentata: 5 3
+P_christyi: 5 3
+P_vulcani: 5 3
+B_bisulcata: 5 3
+B_trentonensis: 5 3
+C_arago: 5 3
+P_vacuvertis: 5 3
+P_oehlerti: 5 3
+C_rouaulti: 5 3
+C_boisselli: 5 3
+C_alcantarae: 5 3
+E_sdzuyi: 5 3
+AscertainedAlignment(Homalonotidae_v2simp_morph3_unordered)
+  16 taxa
+  5 sites with weight 2
+  5 patterns
+
+TreeLikelihood(Homalonotidae_v2simp_morph3_unordered_treeLikelihood) uses BeerLikelihoodCore
+  AscertainedAlignment(Homalonotidae_v2simp_morph3_unordered): [taxa, patterns, sites] = [16, 5, 2]
+===============================================================================
+Citations for this model:
+
+Bouckaert RR, Heled J, Kuehnert D, Vaughan TG, Wu C-H, Xie D, Suchard MA,
+  Rambaut A, Drummond AJ (2014) BEAST 2: A software platform for Bayesian
+  evolutionary analysis. PLoS Computational Biology 10(4): e1003537
+
+Stadler, T., Kuehnert, D., Bonhoeffer, S., and Drummond, A. J. (2013):
+ Birth-death skyline plot reveals temporal changes of
+ epidemic spread in HIV and hepatitis C virus (HCV). PNAS 110(1): 228–33.
+If sampled ancestors are used then please also cite: Gavryushkina A, Welch D, Stadler T, Drummond AJ (2014) 
+Bayesian inference of sampled ancestor trees for epidemiology and fossil calibration. 
+PLoS Comput Biol 10(12): e1003919. doi:10.1371/journal.pcbi.1003919
+
+===============================================================================
+Start likelihood: -Infinity after 10 initialisation attempts
+Fatal exception: Could not find a proper state to initialise. Perhaps try another seed.

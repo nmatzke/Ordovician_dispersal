@@ -1,0 +1,2 @@
+dataset_name	name_of_userDataType	numstates	ordering	numchars	numGammaCat	clockModel_name
+1	Hebertella_v2simp	datatype_Hebertella_v2simp_morph2_unordered	2	unordered	18	4	shared_clock

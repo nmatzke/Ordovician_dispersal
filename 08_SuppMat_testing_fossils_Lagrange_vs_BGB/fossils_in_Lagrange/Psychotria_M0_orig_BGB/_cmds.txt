@@ -1,0 +1,6 @@
+
+
+cd /drives/GDrive/__GDrive_projects/2016-02-04_Reddy_Condamine/DECX_biorXiv/Appendix_7_Fossil_tips_Palpimanoids/fossils_in_Lagrange/Psychotria_M0_orig_BGB/
+
+
+Rscript script_v1.R | tee output.txt &

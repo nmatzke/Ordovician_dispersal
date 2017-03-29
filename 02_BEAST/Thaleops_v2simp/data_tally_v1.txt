@@ -1,0 +1,21 @@
+OTUs	use	clade_constr	file1	any_data
+1	Raymondapsis	yes	0	1	1
+2	T_lacertus	yes	0	1	1
+3	T_viator	yes	0	1	1
+4	T_utahensis	yes	0	1	1
+5	T_marginalis	yes	0	1	1
+6	T_conradi	yes	0	1	1
+7	T_angusticollis	yes	0	1	1
+8	T_depressicapitatus	yes	0	1	1
+9	T_latiaxiatus	yes	0	1	1
+10	T_fieldi	yes	0	1	1
+11	T_conifrons	yes	0	1	1
+12	T_raymondi	yes	0	1	1
+13	T_mackenziensis	yes	0	1	1
+14	T_aduncus	yes	0	1	1
+15	T_ovata	yes	0	1	1
+16	T_longispina	yes	0	1	1
+17	T_anusacermissima	yes	0	1	1
+18	T_laurentiana	yes	0	1	1
+19	T_jaanussoni	yes	0	1	1
+20	T_mobydicki	yes	0	1	1

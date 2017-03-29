@@ -1,0 +1,115 @@
+
+                        BEAST v2.4.2, 2002-2016
+             Bayesian Evolutionary Analysis Sampling Trees
+                       Designed and developed by
+ Remco Bouckaert, Alexei J. Drummond, Andrew Rambaut & Marc A. Suchard
+                                    
+                     Department of Computer Science
+                         University of Auckland
+                        remco@cs.auckland.ac.nz
+                        alexei@cs.auckland.ac.nz
+                                    
+                   Institute of Evolutionary Biology
+                        University of Edinburgh
+                           a.rambaut@ed.ac.uk
+                                    
+                    David Geffen School of Medicine
+                 University of California, Los Angeles
+                           msuchard@ucla.edu
+                                    
+                      Downloads, Help & Resources:
+                           http://beast2.org/
+                                    
+  Source code distributed under the GNU Lesser General Public License:
+                   http://github.com/CompEvol/beast2
+                                    
+                           BEAST developers:
+   Alex Alekseyenko, Trevor Bedford, Erik Bloomquist, Joseph Heled, 
+ Sebastian Hoehna, Denise Kuehnert, Philippe Lemey, Wai Lok Sibon Li, 
+Gerton Lunter, Sidney Markowitz, Vladimir Minin, Michael Defoin Platel, 
+                 Oliver Pybus, Chieh-Hsi Wu, Walter Xie
+                                    
+                               Thanks to:
+          Roald Forsberg, Beth Shapiro and Korbinian Strimmer
+
+Random number seed: 754321
+
+Lichas_laciniatus: 22 2
+P_kristiae: 22 2
+P_pandus: 22 2
+P_robbinsi: 22 2
+A_lineatus: 22 2
+A_subpunctatus: 22 2
+A_aspratilis: 22 2
+A_conradi: 22 2
+A_cucullus: 22 2
+A_jukesi: 22 2
+L_bronnikovi: 22 2
+A_encyrtos: 22 2
+A_effnensis: 22 2
+AscertainedAlignment(Tetralichinae_v2simp_morph2_unordered)
+  13 taxa
+  22 sites with weight 20
+  17 patterns
+
+TreeLikelihood(Tetralichinae_v2simp_morph2_unordered_treeLikelihood) uses BeerLikelihoodCore
+  AscertainedAlignment(Tetralichinae_v2simp_morph2_unordered): [taxa, patterns, sites] = [13, 17, 20]
+Lichas_laciniatus: 9 3
+P_kristiae: 9 3
+P_pandus: 9 3
+P_robbinsi: 9 3
+A_lineatus: 9 3
+A_subpunctatus: 9 3
+A_aspratilis: 9 3
+A_conradi: 9 3
+A_cucullus: 9 3
+A_jukesi: 9 3
+L_bronnikovi: 9 3
+A_encyrtos: 9 3
+A_effnensis: 9 3
+AscertainedAlignment(Tetralichinae_v2simp_morph3_unordered)
+  13 taxa
+  9 sites with weight 6
+  9 patterns
+
+TreeLikelihood(Tetralichinae_v2simp_morph3_unordered_treeLikelihood) uses BeerLikelihoodCore
+  AscertainedAlignment(Tetralichinae_v2simp_morph3_unordered): [taxa, patterns, sites] = [13, 9, 6]
+Lichas_laciniatus: 6 4
+P_kristiae: 6 4
+P_pandus: 6 4
+P_robbinsi: 6 4
+A_lineatus: 6 4
+A_subpunctatus: 6 4
+A_aspratilis: 6 4
+A_conradi: 6 4
+A_cucullus: 6 4
+A_jukesi: 6 4
+L_bronnikovi: 6 4
+A_encyrtos: 6 4
+A_effnensis: 6 4
+AscertainedAlignment(Tetralichinae_v2simp_morph4_unordered)
+  13 taxa
+  6 sites with weight 2
+  6 patterns
+
+TreeLikelihood(Tetralichinae_v2simp_morph4_unordered_treeLikelihood) uses BeerLikelihoodCore4
+  AscertainedAlignment(Tetralichinae_v2simp_morph4_unordered): [taxa, patterns, sites] = [13, 6, 2]
+===============================================================================
+Citations for this model:
+
+Bouckaert RR, Heled J, Kuehnert D, Vaughan TG, Wu C-H, Xie D, Suchard MA,
+  Rambaut A, Drummond AJ (2014) BEAST 2: A software platform for Bayesian
+  evolutionary analysis. PLoS Computational Biology 10(4): e1003537
+
+Stadler, T., Kuehnert, D., Bonhoeffer, S., and Drummond, A. J. (2013):
+ Birth-death skyline plot reveals temporal changes of
+ epidemic spread in HIV and hepatitis C virus (HCV). PNAS 110(1): 228–33.
+If sampled ancestors are used then please also cite: Gavryushkina A, Welch D, Stadler T, Drummond AJ (2014) 
+Bayesian inference of sampled ancestor trees for epidemiology and fossil calibration. 
+PLoS Comput Biol 10(12): e1003919. doi:10.1371/journal.pcbi.1003919
+
+===============================================================================
+Start likelihood: -5997398.437400615 
+         Sample      posterior          prior     likelihood logP(mr__LCA)) mrcatim_p_LCA) monophy_roup1) logP(mr_oup1)) mrcatim_roup1) strictM__clock Tetrali_lihood Tetrali_lihood Tetrali_lihood BDSKY_p_d_tree     originTime      birthRate      deathRate   samplingRate            rho
+              0  -5997398.4374  -5996957.3545      -441.0828        -4.4449         0.0110              1        -3.6823         0.0100         0.01        -207.9355      -154.2621       -78.8852      -117.4104       100.0            0.02           0.002          0.002          1.0    --
+Fatal exception: null

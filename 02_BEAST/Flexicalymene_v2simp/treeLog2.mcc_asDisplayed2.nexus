@@ -1,0 +1,45 @@
+#NEXUS
+[R-package APE, Sun Sep  4 18:15:33 2016]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 16;
+	TAXLABELS
+		F_planimarginata
+		F_cavei
+		F_verecunda
+		F_caractaci
+		F_jemtlandica
+		F_scabustula
+		F_senaria
+		F_onniensis
+		F_retrorsa_minuens
+		F_retrorsa_retrorsa
+		F_meeki
+		F_granulosa
+		F_quadricapita
+		F_praelongicephala
+		Gravicalymene_truncatus
+		Gravicalymene_sp
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	F_planimarginata,
+		2	F_cavei,
+		3	F_verecunda,
+		4	F_caractaci,
+		5	F_jemtlandica,
+		6	F_scabustula,
+		7	F_senaria,
+		8	F_onniensis,
+		9	F_retrorsa_minuens,
+		10	F_retrorsa_retrorsa,
+		11	F_meeki,
+		12	F_granulosa,
+		13	F_quadricapita,
+		14	F_praelongicephala,
+		15	Gravicalymene_truncatus,
+		16	Gravicalymene_sp
+	;
+	TREE * UNTITLED = [&R] (((((((1:-0.5772098117,2:9.469495773):3.960622787,3:0.06587231159):2.241426229,4:0.6544720531):0.6912580431,((5:0.3361522779,6:2.412250996):0.4207726121,7:2.160211146):1.084641963):0.5998734012,8:2.567394413):1.001595788,((((9:2.193087816,10:0.3296789974):0.3262563795,11:1.200550113):2.497715354,12:0.9048006414):2.153429002,(13:1.012743354,14:1.78613776):1.012509316):2.183546335):1.157377779,(15:0.8217244297,16:0.7291084528):5.42388016):0;
+END;

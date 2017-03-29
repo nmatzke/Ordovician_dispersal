@@ -1,0 +1,12 @@
+OTUs	use	clade_constr	file1	any_data
+1	D_tennesseensis	yes	0	1	1
+2	H_alveata	yes	0	1	1
+3	H_bursa	yes	0	1	1
+4	H_frankfortensis	yes	0	1	1
+5	H_maria	yes	0	1	1
+6	H_montoyensis	yes	0	1	1
+7	H_occidentalis	yes	0	1	1
+8	H_parksensis	yes	0	1	1
+9	H_prestonensis	yes	0	1	1
+10	H_richmondensis	yes	0	1	1
+11	H_subjugata	yes	0	1	1

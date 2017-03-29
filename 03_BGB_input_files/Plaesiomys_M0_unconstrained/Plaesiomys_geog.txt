@@ -1,0 +1,14 @@
+13	7	(A C N R S U W)
+P_subcircularis	0010000
+P_proavitus	1000011
+P_occidentalis	0000010
+P_belilamellosus	0000010
+P_subquadratus	0100001
+P_anticostiensis	0000100
+P_carltona	0000100
+P_bellistriatus	1000011
+P_idahoensis	0001000
+P_cutterensis	0000001
+D_sweeneyi	0000010
+D_meedsi_arctica	0000010
+D_venusta	1000000

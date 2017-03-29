@@ -1,0 +1,26 @@
+#NEXUS
+
+BEGIN DATA;
+	DIMENSIONS  NTAX=16 NCHAR=19;
+	FORMAT DATATYPE = STANDARD GAP = - MISSING = ? SYMBOLS = "  0 1 2 3";
+	MATRIX
+	Gravicalymene_sp       010101200000??0???0
+	Gravicalymene_truncatus 0100011000001?00020
+	F_verecunda            0111110100010?02?0?
+	F_onniensis            ??111111?011??01211
+	F_scabustula           0112102100011?02111
+	F_jemtlandica          0012102100011?01011
+	F_cavei                00120021000210?0111
+	F_planimarginata       00110101?00?1?0?10?
+	F_caractaci            0011110110011100111
+	F_senaria              0012112111011101121
+	F_praelongicephala     0001012121?1??00201
+	F_quadricapita         0101010220111?00201
+	F_granulosa            1101112221121111222
+	F_meeki                1101111111130120222
+	F_retrorsa_retrorsa    1101111121131120222
+	F_retrorsa_minuens     1203111121132122222
+
+;
+END;
+

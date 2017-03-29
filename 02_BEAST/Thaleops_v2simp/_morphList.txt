@@ -1,0 +1,4 @@
+dataset_name	name_of_userDataType	numstates	ordering	numchars	numGammaCat	clockModel_name
+1	Thaleops_v2simp	datatype_Thaleops_v2simp_morph2_unordered	2	unordered	8	4	shared_clock
+2	Thaleops_v2simp	datatype_Thaleops_v2simp_morph3_unordered	3	unordered	8	4	shared_clock
+3	Thaleops_v2simp	datatype_Thaleops_v2simp_morph4_unordered	4	unordered	4	4	shared_clock

@@ -1,0 +1,17 @@
+OTU	nPar	nQ	nQ_woInvar	numchars	completePercent	numchars2	completePercent2
+1	Neseuretus	0	0	0	26	100	26	100
+2	T_delphinocephalus	0	0	0	26	100	26	100
+3	P_dyaulax	0	0	0	26	100	26	100
+4	P_exul	0	4	4	22	84.62	22	84.62
+5	P_dentata	0	0	0	26	100	26	100
+6	P_christyi	0	0	0	26	100	26	100
+7	P_vulcani	0	0	0	26	100	26	100
+8	B_bisulcata	0	1	1	25	96.15	25	96.15
+9	B_trentonensis	0	0	0	26	100	26	100
+10	C_arago	0	0	0	26	100	26	100
+11	P_vacuvertis	0	0	0	26	100	26	100
+12	P_oehlerti	0	0	0	26	100	26	100
+13	C_rouaulti	0	0	0	26	100	26	100
+14	C_boisselli	0	3	3	23	88.46	23	88.46
+15	C_alcantarae	0	2	2	24	92.31	24	92.31
+16	E_sdzuyi	0	5	5	21	80.77	21	80.77

@@ -1,0 +1,17 @@
+OTU	nPar	nQ	nQ_woInvar	numchars	completePercent	numchars2	completePercent2
+1	Gravicalymene_sp	0	5	5	14	73.68	14	73.68
+2	Gravicalymene_truncatus	0	1	1	18	94.74	18	94.74
+3	F_verecunda	0	3	3	16	84.21	16	84.21
+4	F_onniensis	0	5	5	14	73.68	14	73.68
+5	F_scabustula	0	1	1	18	94.74	18	94.74
+6	F_jemtlandica	0	1	1	18	94.74	18	94.74
+7	F_cavei	0	1	1	18	94.74	18	94.74
+8	F_planimarginata	0	5	5	14	73.68	14	73.68
+9	F_caractaci	0	0	0	19	100	19	100
+10	F_senaria	0	0	0	19	100	19	100
+11	F_praelongicephala	0	3	3	16	84.21	16	84.21
+12	F_quadricapita	0	1	1	18	94.74	18	94.74
+13	F_granulosa	0	0	0	19	100	19	100
+14	F_meeki	0	0	0	19	100	19	100
+15	F_retrorsa_retrorsa	0	0	0	19	100	19	100
+16	F_retrorsa_minuens	0	0	0	19	100	19	100

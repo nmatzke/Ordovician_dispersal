@@ -1,0 +1,33 @@
+#NEXUS
+
+BEGIN DATA;
+	DIMENSIONS  NTAX=23 NCHAR=27;
+	FORMAT DATATYPE = STANDARD GAP = - MISSING = ? SYMBOLS = "  0 1 2";
+	MATRIX
+	Actinopeltis_globosa        10110100100??1?110011100101
+	Actinopeltis_carolialexandri	10110100100??11110111111121
+	D_barrandei                 000010111100011001110001120
+	D_globifrons                000010110100001001110001110
+	D_ellipticum                01201011?110001101110011120
+	D_bainsi                    010110110110010101000011100
+	D_grovesi                   0120101101100??101000010100
+	D_longifrons                001010110110???????????????
+	D_fleur                     000?1011??10???????????????
+	O_liversidgei               110011111101?11000001000010
+	S_robustus                  101001111100111101111111010
+	S_kingi                     10110111?001?111011??10?100
+	S_dentata                   101101111001111100111?01100
+	S_longispina                1011011100001??1?1101101120
+	S_cranium                   10110111100??11101111101011
+	S_maquoketensis             101001110100?1?1?111110?100
+	S_murphyi                   101?0?11??011??101101111100
+	S_gemina                    1011011110001??100101110120
+	S_goodnovi                  101001111100110100101010100
+	S_exserta                   112011110100???000001110100
+	H_huebneri                  11100102100????0111?1100100
+	H_pseudohemicranium         1021010210001010111?1100020
+	H_elliptica                 00110102100??1?????????????
+
+;
+END;
+

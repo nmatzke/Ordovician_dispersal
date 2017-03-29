@@ -1,0 +1,17 @@
+16	6	(A C G P S V)
+P_christyi	010000
+P_dentata	000001
+P_vulcani	000001
+P_dyaulax	001000
+B_trentonensis	000100
+B_bisulcata	000001
+T_delphinocephalus	110000
+C_alcantarae	001000
+C_boisselli	001000
+E_sdzuyi	001000
+P_oehlerti	001000
+P_vacuvertis	001000
+P_exul	001000
+C_rouaulti	001000
+C_arago	001000
+Neseuretus	000010

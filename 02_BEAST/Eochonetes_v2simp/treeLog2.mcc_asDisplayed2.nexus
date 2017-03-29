@@ -1,0 +1,45 @@
+#NEXUS
+[R-package APE, Sun Sep  4 18:26:43 2016]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 16;
+	TAXLABELS
+		E_mucronata
+		E_magna
+		E_vaurealensis
+		E_minerva
+		E_glabra
+		E_johnsonella
+		E_recedens
+		E_aspera
+		E_maearum
+		E_advena
+		E_clarksvillensis
+		E_celticus
+		E_voldemortus
+		E_dignata
+		S_rugosa
+		S_socialis
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	E_mucronata,
+		2	E_magna,
+		3	E_vaurealensis,
+		4	E_minerva,
+		5	E_glabra,
+		6	E_johnsonella,
+		7	E_recedens,
+		8	E_aspera,
+		9	E_maearum,
+		10	E_advena,
+		11	E_clarksvillensis,
+		12	E_celticus,
+		13	E_voldemortus,
+		14	E_dignata,
+		15	S_rugosa,
+		16	S_socialis
+	;
+	TREE * UNTITLED = [&R] ((((((((1:1.00653857,2:0.166730009):1.323676564,(3:0.2468736321,4:0.1688226014):0.1369389147):0.03023184091,(5:-2.165248483,6:5.48436451):3.950241908):1.135709457,7:0.5491413549):0.3228692636,8:1.378084064):0.6711032093,(((9:0.4332011417,10:1.14492776):0.4538322389,11:1.342455499):0.5204774365,12:2.475665769):1.119108379):1.843816742,(13:1.424992383,14:0.511156477):2.419795588):2.056046642,(15:0.4644549778,16:0.5652675778):0.9453303292):0;
+END;

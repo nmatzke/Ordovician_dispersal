@@ -1,0 +1,21 @@
+20	7	(A N P R S U W)
+T_anusacerbissima	0000001
+T_mackenziensis	0100000
+T_aduncus	0100000
+T_laurentiana	0010010
+T_latiaxiatus	0010000
+T_depressicapitatus	0000001
+T_ovata	0010011
+T_conradi	0010100
+T_viator	0000100
+T_lacertus	0100000
+T_mobydicki	0000001
+T_fieldi	1000000
+T_conifrons	0000100
+T_angusticollis	0010010
+T_longispina	0010000
+T_raymondi	0010000
+T_jaanussoni	0000001
+T_marginalis	0000100
+T_utahensis	0001000
+Raymondapsis	0001000

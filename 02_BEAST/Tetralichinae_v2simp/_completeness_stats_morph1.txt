@@ -1,0 +1,15 @@
+OTU	nPar	nQ	nQ_woInvar	numchars	completePercent	numchars2	completePercent2
+1	Lichas_laciniatus	0	3	3	25	89.29	25	89.29
+2	P_kristiae	0	1	1	27	96.43	27	96.43
+3	P_pandus	0	16	16	12	42.86	12	42.86
+4	P_robbinsi	0	16	16	12	42.86	12	42.86
+5	A_lineatus	0	8	8	20	71.43	20	71.43
+6	A_subpunctatus	0	3	3	25	89.29	25	89.29
+7	A_aspratilis	0	3	3	25	89.29	25	89.29
+8	A_conradi	0	3	3	25	89.29	25	89.29
+9	A_cucullus	0	3	3	25	89.29	25	89.29
+10	A_jukesi	0	4	4	24	85.71	24	85.71
+11	L_bronnikovi	0	4	4	24	85.71	24	85.71
+12	P_ornatus	0	3	3	25	89.29	25	89.29
+13	A_encyrtos	0	5	5	23	82.14	23	82.14
+14	A_effnensis	0	9	9	19	67.86	19	67.86

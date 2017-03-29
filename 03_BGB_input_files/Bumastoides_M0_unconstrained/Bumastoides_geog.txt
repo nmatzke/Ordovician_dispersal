@@ -1,0 +1,14 @@
+13	7	(A B N P S U W)
+B_tenuirugosus	0010001
+B_beckeri	0000010
+B_kimmswickensis	0000010
+B_bellevillensis	0001000
+B_porrectus	0001010
+B_holei	0001001
+B_graffhami	0000001
+B_milleri	0001010
+B_billingsi	0000110
+B_solangeae	0010000
+B_moundensis	1000000
+B_lenzi	0010000
+S_linnarssoni	0100000

@@ -1,0 +1,14 @@
+OTUs	use	clade_constr	file1	any_data
+1	D_meedsi_arctica	yes	1	1	1
+2	D_sweeneyi	yes	1	1	1
+3	D_venusta	yes	1	1	1
+4	P_anticostiensis	yes	0	1	1
+5	P_belilamellosus	yes	0	1	1
+6	P_bellistriatus	yes	0	1	1
+7	P_carltona	yes	0	1	1
+8	P_cutterensis	yes	0	1	1
+9	P_idahoensis	yes	0	1	1
+10	P_occidentalis	yes	0	1	1
+11	P_proavitus	yes	0	1	1
+12	P_subcircularis	yes	0	1	1
+13	P_subquadratus	yes	0	1	1
